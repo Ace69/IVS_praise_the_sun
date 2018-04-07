@@ -1,13 +1,11 @@
+package Math;
+
 /**
- * @file MathLib.java
+ * @brief Matematicka knihovna pro kalkulacku.
  * @author Tomas Sverak (xsvera04)
  * @date 6.4. 2018
  * @version 1.0
- * @brief Matematicka knihovna pro kalkulacku.
  */
-
-package Math;
-
 public class MathLib {
     
     /**
@@ -127,10 +125,5 @@ public class MathLib {
         }
         
         return delenec % delitel;
-    }
-      
-    public static void main(String[] args) {
-        double x = odmocnina(16, 4);
-        System.out.println(x);
     }
 }
