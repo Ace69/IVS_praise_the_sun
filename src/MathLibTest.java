@@ -1,33 +1,18 @@
+package Math;
+
+import org.junit.Test;
+import static org.junit.Assert.*;
+
 /**
- * @file MathLibTest.java
  * @author Tomas Sverak (xsvera04)
  * @date 7.4. 2018
  * @version 1.0
  * @brief Testy predepsane pro matematicka knihovnu.
  */
-
-package Math;
-
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
-import static org.junit.Assert.*;
-
 public class MathLibTest {
-    
-    public MathLibTest() {
-    }
-    
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
 
     /**
-     * Test scitani dvou cisel.
+     * @brief Test scitani dvou cisel.
      */
     @Test
     public void testScitani() {
@@ -45,7 +30,7 @@ public class MathLibTest {
     }
 
     /**
-     * Test odcitani dvou cisel.
+     * @brief Test odcitani dvou cisel.
      */
     @Test
     public void testOdecitani() {
@@ -63,7 +48,7 @@ public class MathLibTest {
     }
 
     /**
-     * Test nasobeni dvou cisel.
+     * @brief Test nasobeni dvou cisel.
      */
     @Test
     public void testNasobeni() {
@@ -80,7 +65,7 @@ public class MathLibTest {
     }
 
     /**
-     * Test deleni dvou cisel.
+     * @brief Test deleni dvou cisel.
      */
     @Test
     public void testDeleni() {
@@ -96,8 +81,8 @@ public class MathLibTest {
         assertNotEquals(MathLib.deleni(-0.125, -0.125), 0.9, 0.000001);
     }
     
-    /*
-     * Test deleni nulou.
+    /**
+     * @brief Test na deleni nulou
      */
     @Test (expected = ArithmeticException.class)
     public void testDeleniNulou() {
@@ -105,7 +90,7 @@ public class MathLibTest {
     }
 
     /**
-     * Test faktorialu.
+     * @brief Test faktorialu.
      */
     @Test
     public void testFaktorial() {
@@ -118,7 +103,7 @@ public class MathLibTest {
     }
     
     /**
-     * Test zaporneho faktorialu.
+     * @brief Test zaporneho faktorialu.
      */
     @Test (expected = IllegalArgumentException.class)
     public void testZapornyFaktorial() {
@@ -126,7 +111,7 @@ public class MathLibTest {
     }
     
     /**
-     * Test zakladu umocneneho na exponent.
+     * @brief Test zakladu umocneneho na exponent.
      */
     @Test
     public void testMocnina() {
@@ -141,20 +126,22 @@ public class MathLibTest {
     }
     
     /**
-     * Testy pokud exponent neni prirozene cislo.
+     * @brief Test pokud exponent neni prirozene cislo.
      */
     @Test (expected = IllegalArgumentException.class)
     public void testNeprirozenaMocnina1() {
         MathLib.mocnina(1, 0);
     }
-    
+    /**
+     * @brief Druhy test pokud exponent neni prirozene cislo.
+     */
     @Test (expected = IllegalArgumentException.class)
     public void testNeprirozenaMocnina2() {
         MathLib.mocnina(1, -1);
     }
     
     /**
-     * Test zakladu umocneneho na exponent.
+     * @brief Test zakladu umocneneho na exponent.
      */
     @Test
     public void testOdmocnina() {
@@ -166,7 +153,7 @@ public class MathLibTest {
     }
     
     /**
-     * Test zaporneho zakladu odmocniny.
+     * @brief Test zaporneho zakladu odmocniny.
      */
     @Test (expected = IllegalArgumentException.class)
     public void testZapornyZakladOdmocniny() {
@@ -174,7 +161,7 @@ public class MathLibTest {
     }
     
     /**
-     * Test nulte odmocniny ze zakladu.
+     * @brief Test nulte odmocniny ze zakladu.
      */
     @Test (expected = IllegalArgumentException.class)
     public void testNultaOdmocnina() {
@@ -182,7 +169,7 @@ public class MathLibTest {
     }
 
     /**
-     * Test mudulo.
+     * @brief Test mudulo.
      */
     @Test
     public void testModulo() {
@@ -196,11 +183,12 @@ public class MathLibTest {
         assertNotEquals(MathLib.modulo(100000, 50), 1.2589254, 0.000001);
     }
     
-     /*
-     * Test modulo nulou.
+
+    /**
+     * @brief Test modulo nulou.
      */
     @Test (expected = ArithmeticException.class)
     public void testModuloNulou() {
         MathLib.modulo(1, 0);
-    }    
+    }   
 }
