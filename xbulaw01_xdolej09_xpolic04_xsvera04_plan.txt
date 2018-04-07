@@ -1,0 +1,53 @@
+1) Komunikační kanál: 
+-Telegram, Messenger
+Pro komunikaci mezi všemi účastníky projektu byla vytvořena skupina na Messengeru a Telegramu, jež budou všichni pravidelně navštěvovat minimálně 1x denně. 
+
+2) Přidělení úkolů na projektu: 
+David Bulawa (xbulaw01)
+- Tvorba matematické knihovny 
+- Profiling
+- Tvorba instalátoru (odinstalátoru) 
+- Tvorba dokumentace
+
+Jakub Dolejší (xdolej09)
+- Tvorba souboru Makefile
+- Testování software 
+- Tvorba instalátoru (odinstalátoru) 
+- Tvorba dokumentace
+
+František Policar (xpolic04)
+- Tvorba prezentace
+- Readme file
+- Testovaní matematické knihovny (TDD) 
+- Tvorba matematické knihovny 
+- Tvorba dokumentace
+
+Tomáš Svěrák (xsvera04)
+-Grafická nadstavba pro matematickou knihovnu 
+-Tvorba dokumentace
+-Mockup 
+
+3) Termíny: 
+- Plán 19.3.2018
+- Readme file 26.3.2018
+- Tvorba testů pro matematickou knihvnu 30.3.2018
+- Tvorba matematické knihovny 4.4.2018 
+- Implementace knihovny a tvorba GUI 12.4.2018
+- Instalátor 16.4.2018
+- Makefile 18.4.2018
+- Mockup 19.4.2018 
+- Dokumentace programu 20.4.2018
+- Hodnocení txt 21.4.2018
+- Problémy txt 29.4.2018
+- Prezentace 3.5.2018 
+
+4) Použité nástroje:
+IDE - Netbeans
+Programovací jazyk - Java
+Zvolený systém pro správu verzí - Git 
+Zvolený hosting správy verzí - GitHub
+Do repozitáře jsme umožnili přístup uživateli ivskontrola
+https://github.com/Ace69/IVS_praise_the_sun.git
+
+
+
