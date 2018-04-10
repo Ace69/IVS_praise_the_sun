@@ -3,7 +3,7 @@ package Math;
 import java.util.Scanner;
 
 /**
- * @brief Trida pro vypocet smerodatne odchylky
+ * @brief Trida pro vypocet smerodatne odchylka
  * @author David Bulawa(xbulaw01)
  * @date 7.4.2018
  * @version 1.0
