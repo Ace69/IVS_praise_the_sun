@@ -27,8 +27,9 @@ API (zkratka pro Application Programming Interface) označuje v informatice rozh
       ... <br />
       
 **NÁVRATOVÝ KÓD** <br />
-      U fuknce scitani() při úspěšném výpočtu sečte obě čísla ve fukci vypocet() a výsledek se zobrazí v TextFieldu - vysledek(). <br />
-      U fuknce faktorial() se vypočítá faktroiál čísla a ve fukci vypocet() zobrazí výsledek v TextFieldu - vysledek().
+      U fuknkce scitani() při úspěšném výpočtu sečte obě čísla ve funkci vypocet() a výsledek se zobrazí v TextFieldu - vysledek(). <br />
+      U fuknkce faktorial() se vypočítá faktroiál čísla a ve funkci vypocet() zobrazí výsledek v TextFieldu - vysledek(). <br />
+      ...
 
 ## Tiráž
 
