@@ -1,4 +1,4 @@
-package Math;
+package GitHub;
 
 import java.util.Scanner;
 

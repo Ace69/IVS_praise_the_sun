@@ -1,4 +1,4 @@
-package Math;
+package GitHub;
 
 /**
  * @brief Matematicka knihovna pro kalkulacku.

@@ -23,7 +23,7 @@ public class FXMLDocumentController implements Initializable {
     
     Double data;
     int operation = -1;
-    
+    boolean destecka = false;
     @FXML
     private Button button;
     
@@ -143,10 +143,12 @@ public class FXMLDocumentController implements Initializable {
         vysledek.setText(vysledek.getText() + "0");
     }
     else if(event.getSource() == cara)
-    {
-        vysledek.setText(vysledek.getText() + ".");
+    {   
+        if(destecka == false){
+            vysledek.setText(vysledek.getText() + ".");
+            destecka = true;
+        }
     }
-    
     //Mazani
     else if(event.getSource() == smazat)
     {
@@ -205,6 +207,8 @@ public class FXMLDocumentController implements Initializable {
     
     else if(event.getSource() == rovno)
     {
+        
+        if(!vysledek.getText().isEmpty()){
         Float druhyOperand = Float.parseFloat(vysledek.getText());
         switch(operation)
         {
@@ -232,8 +236,12 @@ public class FXMLDocumentController implements Initializable {
             case 8: //Modulo
                 Float mod = data + druhyOperand;
                 vysledek.setText(String.valueOf(mod));break;
-        */}
+           */
+        }
+        }
           
+    }else{
+        vysledek.setText("Nebylo nic zadano");
     }
     
     }
