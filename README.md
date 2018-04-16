@@ -16,15 +16,19 @@ API (zkratka pro Application Programming Interface) označuje v informatice rozh
 ### Příklad: 
 
 **SYNTAXE** <br />
-      #include &lt; math_lib.h &gt; <br />
-      double sqrt (double x); <br />
-      float sqrtf (float X); <br />
-  
+      #include &lt;MathLib.javah&gt; <br />
+      scitani (double **cislo1**, double **cislo2**); <br />
+      faktorial (dlouble **cislo**); <br />
+      ... <br />
+      
 **POPIS** <br />
-      Funkce sqrt() vypočítá druhou odmocninu z argumentu. <br />
+      Funkce scitani() sečte **cislo1** a **cislo2** <br />
+      Funkce faktorial() spočítá faktorial proměnné **cislo** <br />
+      ... <br />
       
 **NÁVRATOVÝ KÓD** <br />
-      Při úspěšném výpočtu je vrácena druhá odmocnina (jestliže X je reálné a kladné).
+      U fuknce scitani() při úspěšném výpočtu sečte obě čísla ve fukci vypocet() a výsledek se zobrazí v TextFieldu - vysledek(). <br />
+      U fuknce faktorial() při úspěšném výpočtu se vypočítá faktroiál čísla a ve fukci vypocet() zobrazí výsledek v TextFieldu - vysledek().
 
 ## Tiráž
 
