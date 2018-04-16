@@ -14,5 +14,5 @@ Jabub Dolejší (xdolej09)
 František Policar (xpolic04)
 Tomáš Svěrák (xsvera04)
 
-##Licence
+## Licence
 Tento program je poskytovan...
