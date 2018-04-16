@@ -14,6 +14,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import static java.lang.Math.random;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 /**
  *
@@ -23,7 +28,14 @@ public class FXMLDocumentController implements Initializable {
     
     Double data;
     int operation = -1;
-    boolean destecka = false;
+    boolean destecka = false; //nastavi true pokud uz byla zadana des. tecka
+    boolean textDopredu = false; //pokud je true, zapisuje text vypoctu dopredu 
+    String cislo;
+    Alert alert = new Alert(AlertType.ERROR, "File already exists. Do you want to override?");
+    
+    DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.ENGLISH);
+    DecimalFormat df = new DecimalFormat("#############.####",formatSymbols);
+    
     @FXML
     private Button button;
     
@@ -98,6 +110,8 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private TextField vysledek;
+    @FXML
+    private TextField vypocet;
 
     //Cisla 
     @FXML
@@ -105,47 +119,98 @@ public class FXMLDocumentController implements Initializable {
     if(event.getSource() == jedna)
     {
         vysledek.setText(vysledek.getText() + "1");
+        if(textDopredu == true){
+            vypocet.setText("1" + vypocet.getText()); 
+        }else{
+            vypocet.setText(vypocet.getText() + "1");
+        }
     }
     else if(event.getSource() == dva)
     {
         vysledek.setText(vysledek.getText() + "2");
+        if(textDopredu == true){
+            vypocet.setText("2" + vypocet.getText()); 
+        }else{
+            vypocet.setText(vypocet.getText() + "2");
+        }
     }
     else if(event.getSource() == tri)
     {
         vysledek.setText(vysledek.getText() + "3");
+        if(textDopredu == true){
+            vypocet.setText("3" + vypocet.getText()); 
+        }else{
+            vypocet.setText(vypocet.getText() + "3");
+        }
     }
     else if(event.getSource() == ctyri)
     {
         vysledek.setText(vysledek.getText() + "4");
+        if(textDopredu == true){
+            vypocet.setText("4" + vypocet.getText()); 
+        }else{
+            vypocet.setText(vypocet.getText() + "4");
+        }
     }
     else if(event.getSource() == pet)
     {
         vysledek.setText(vysledek.getText() + "5");
+        if(textDopredu == true){
+            vypocet.setText("5" + vypocet.getText()); 
+        }else{
+            vypocet.setText(vypocet.getText() + "5");
+        }
     }
     else if(event.getSource() == sest)
     {
         vysledek.setText(vysledek.getText() + "6");
+        if(textDopredu == true){
+            vypocet.setText("6" + vypocet.getText()); 
+        }else{
+            vypocet.setText(vypocet.getText() + "6");
+        }
     }
     else if(event.getSource() == sedm)
     {
         vysledek.setText(vysledek.getText() + "7");
+        if(textDopredu == true){
+            vypocet.setText("7" + vypocet.getText()); 
+        }else{
+            vypocet.setText(vypocet.getText() + "7");
+        }
     }
     else if(event.getSource() == osm)
     {
         vysledek.setText(vysledek.getText() + "8");
+        if(textDopredu == true){
+            vypocet.setText("8" + vypocet.getText()); 
+        }else{
+            vypocet.setText(vypocet.getText() + "8");
+        }
     }
     else if(event.getSource() == devet)
     {
         vysledek.setText(vysledek.getText() + "9");
+        if(textDopredu == true){
+            vypocet.setText("9" + vypocet.getText()); 
+        }else{
+            vypocet.setText(vypocet.getText() + "9");
+        }
     }
     else if(event.getSource() == nula)
     {
         vysledek.setText(vysledek.getText() + "0");
+       if(textDopredu == true){
+            vypocet.setText("0" + vypocet.getText()); 
+        }else{
+            vypocet.setText(vypocet.getText() + "0");
+        }
     }
     else if(event.getSource() == cara)
     {   
         if(destecka == false){
             vysledek.setText(vysledek.getText() + ".");
+            vypocet.setText(vypocet.getText() + ".");
             destecka = true;
         }
     }
@@ -153,6 +218,8 @@ public class FXMLDocumentController implements Initializable {
     else if(event.getSource() == smazat)
     {
         vysledek.setText("");
+        vypocet.setText("");
+        destecka = false;
     }
 
     //Pocetni operace
@@ -161,83 +228,179 @@ public class FXMLDocumentController implements Initializable {
         data = Double.parseDouble(vysledek.getText());
         operation = 1; //Scitani
         vysledek.setText("");
+        vypocet.setText(vypocet.getText() + "+");
+        destecka = false;
     }
     else if(event.getSource() == minus)
     {
-        data = Double.parseDouble(vysledek.getText());
-        operation = 2; //Odcitni
-        vysledek.setText("");
+        if(vysledek.getText().isEmpty()){
+            vysledek.setText("-");
+            vypocet.setText(vypocet.getText() + "-");
+        }else{
+            data = Double.parseDouble(vysledek.getText());
+            operation = 2; //Odcitni
+            vysledek.setText("");
+            vypocet.setText(vypocet.getText() + "-");
+            destecka = false;
+        }
     }
     else if(event.getSource() == krat)
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 3; //Nasobeni
         vysledek.setText("");
+        vypocet.setText(vypocet.getText() + "*");
+        destecka = false;
     }
     else if(event.getSource() == deleno)
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 4; //Deleni
         vysledek.setText("");
+        vypocet.setText(vypocet.getText() + "/");
+        destecka = false;
     }
     else if(event.getSource() == odmocnina)
     {
         data = Double.parseDouble(vysledek.getText());
-        operation = 5; //Mocnina
+        operation = 5; //Odmocnina
         vysledek.setText("");
+        vypocet.setText("√" + vypocet.getText());
+        textDopredu = true;
     }
     else if(event.getSource() == mocnina)
     {
         data = Double.parseDouble(vysledek.getText());
-        operation = 6; //Odmocnina
+        operation = 6; //Mocnina
         vysledek.setText("");
+        vypocet.setText(vypocet.getText() + "^");
+        destecka = false;
     }
     else if(event.getSource() == modulo)
     {
         data = Double.parseDouble(vysledek.getText());
-        operation = 7; //Faktorial
+        operation = 7; //Modulo
         vysledek.setText("");
+        vypocet.setText(vypocet.getText() + "%");
+        destecka = false;
     }
     else if(event.getSource() == faktorial)
     {
         data = Double.parseDouble(vysledek.getText());
-        operation = 8; //Modulo
+        operation = 8; //Faktorial
         vysledek.setText("");
+        vypocet.setText(vypocet.getText() + "!");
+        destecka = false;
+        
     }
     
     else if(event.getSource() == rovno)
     {
         
-        if(!vysledek.getText().isEmpty()){
-        Float druhyOperand = Float.parseFloat(vysledek.getText());
+        if(!vypocet.getText().isEmpty()){
+        Float druhyOperand;
+        Double ans = 0d;
         switch(operation)
         {
             case 1: //Scitani
-                Double ans = data + druhyOperand;
-                vysledek.setText(String.valueOf(ans));break;
+                if(!vysledek.getText().isEmpty()){
+                    druhyOperand = Float.parseFloat(vysledek.getText());
+                    ans = MathLib.scitani(data, druhyOperand);
+                    vysledek.setText(String.valueOf(df.format(ans)));  
+                    vypocet.setText(String.valueOf(df.format(ans)));
+                }
+                break;
             case 2: //Odcitani
-                ans = data - druhyOperand;
-                vysledek.setText(String.valueOf(ans));break;
+                if(!vysledek.getText().isEmpty()){
+                    druhyOperand = Float.parseFloat(vysledek.getText());
+                    ans = MathLib.odcitani(data, druhyOperand);
+                    vysledek.setText(String.valueOf(df.format(ans)));
+                    vypocet.setText(String.valueOf(df.format(ans)));
+                }
+                break;
             case 3: //Nasobeni
-                ans = data * druhyOperand;
-                vysledek.setText(String.valueOf(ans));break;
+                if(!vysledek.getText().isEmpty()){
+                    druhyOperand = Float.parseFloat(vysledek.getText());
+                    ans = MathLib.nasobeni(data, druhyOperand);
+                    vysledek.setText(String.valueOf(df.format(ans)));
+                    vypocet.setText(String.valueOf(df.format(ans)));
+                }
+                break;
             case 4: //Deleni
-                ans = data / druhyOperand;
-                vysledek.setText(String.valueOf(ans));break;
+                if(!vysledek.getText().isEmpty()){
+                    try{
+                        druhyOperand = Float.parseFloat(vysledek.getText());
+                        ans = MathLib.deleni(data, druhyOperand);
+                        vysledek.setText(String.valueOf(df.format(ans)));
+                        vypocet.setText(String.valueOf(df.format(ans)));
+                    }catch(ArithmeticException e){
+                        alert.setContentText("Nelze delit nulou!");
+                        vysledek.setText("");
+                        vypocet.setText("");
+                        alert.showAndWait();
+                    }
+                }
+                break;
             case 5: //Odmocnina
-                ans = Math.sqrt(data);
-                vysledek.setText(String.valueOf(ans));break;
+                if(!vysledek.getText().isEmpty()){
+                    try{
+                        druhyOperand = Float.parseFloat(vysledek.getText());
+                        ans = MathLib.odmocnina(data, druhyOperand);
+                        vysledek.setText(String.valueOf(df.format(ans)));
+                        vypocet.setText(String.valueOf(df.format(ans)));
+                    }catch(IllegalArgumentException e){
+                        alert.setContentText("Vyraz pod odmocninou nesmi byt zaporny a zaroven odmocnina nesmi byt nulteho stupne");
+                        vysledek.setText("");
+                        vypocet.setText("");
+                        alert.showAndWait();
+                    }
+                }
+                break;
             case 6: //Mocnina
-                ans = Math.pow(data, druhyOperand);
-                vysledek.setText(String.valueOf(ans));break;
-           /* case 7: //Faktorial
-                Float fakt = data + druhyOperand;
-                vysledek.setText(String.valueOf(fakt));break;
-            case 8: //Modulo
-                Float mod = data + druhyOperand;
-                vysledek.setText(String.valueOf(mod));break;
-           */
+                if(!vysledek.getText().isEmpty()){
+                    try{
+                        druhyOperand = Float.parseFloat(vysledek.getText());
+                        ans = MathLib.mocnina(data, druhyOperand);
+                        vysledek.setText(String.valueOf(df.format(ans)));
+                        vypocet.setText(String.valueOf(df.format(ans)));
+                    }catch(IllegalArgumentException e){
+                        alert.setContentText("Exponent musi byt prirozene cislo");
+                        vysledek.setText("");
+                        vypocet.setText("");
+                        alert.showAndWait();
+                    }
+                }
+                break;
+            case 7: //Modulo
+                if(!vysledek.getText().isEmpty()){
+                    try{
+                        druhyOperand = Float.parseFloat(vysledek.getText());
+                        ans = MathLib.modulo(data, druhyOperand);
+                        vysledek.setText(String.valueOf(df.format(ans)));
+                        vypocet.setText(String.valueOf(df.format(ans)));
+                    }catch(ArithmeticException e){
+                        alert.setContentText("Nelze delit nulou");
+                        vysledek.setText("");
+                        vypocet.setText("");
+                        alert.showAndWait();
+                    }
+                }
+                break;
+            case 8: //Faktorial
+                try{
+                    ans = MathLib.faktorial(data);
+                    vysledek.setText(String.valueOf(df.format(ans)));
+                    vypocet.setText(String.valueOf(ans));
+                }catch(IllegalArgumentException e ){
+                    alert.setContentText("Faktorial musi byt nezaporny");
+                    vysledek.setText("");
+                    vypocet.setText("");
+                    alert.showAndWait();
+                }
+                break;
+           
         }
+        textDopredu = false;
         }
           
     }else{
