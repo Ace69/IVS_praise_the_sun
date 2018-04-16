@@ -10,10 +10,10 @@ Windows 7 64bit
 ## Tiráž
 
 ### Autoři 
-**Praise the sun**__
-David Bulawa (xbulaw01)__
-Jabub Dolejší (xdolej09)__
-František Policar (xpolic04)__
+**Praise the sun** <br />
+David Bulawa (xbulaw01) <br />
+Jabub Dolejší (xdolej09) <br />
+František Policar (xpolic04)
 Tomáš Svěrák (xsvera04)
 
 ### Licence
