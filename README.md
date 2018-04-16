@@ -7,12 +7,14 @@ Kalkulačka (dříve též počítačka) je typicky přenosné elektronické za�
 ## Prostředí 
 Windows 7 64bit
 
-## Autoři 
-Praise the sun 
-David Bulawa (xbulaw01)
-Jabub Dolejší (xdolej09)
-František Policar (xpolic04)
+## Tiráž
+
+### Autoři 
+**Praise the sun**__
+David Bulawa (xbulaw01)__
+Jabub Dolejší (xdolej09)__
+František Policar (xpolic04)__
 Tomáš Svěrák (xsvera04)
 
-## Licence
+### Licence
 Tento program je poskytovan...
