@@ -7,7 +7,7 @@ Kalkulačka (dříve též počítačka) je typicky přenosné elektronické za�
 ## Programování
 Matematická knihovna je naprogramovaná v jazyce [Java](https://cs.wikipedia.org/wiki/JavaFX). Grafické zobrazení kalkulačky je provedeno za pomocí [JavaFX Scene Builder 1.1](http://www.oracle.com/technetwork/java/javafxscenebuilder-1x-archive-2199384.html). 
 
-##Instalace 
+## Instalace 
 Zde bude postup, jak instalovat kalkulačku.
 
 ## API 
@@ -15,15 +15,15 @@ API (zkratka pro Application Programming Interface) označuje v informatice rozh
 
 ### Příklad: 
 
-**SYNTAXE**
-      #include <nase knihovna.h>
-      double sqrt (double x);
-      float sqrtf (float X);
+**SYNTAXE** <br />
+      #include <nase knihovna.h> <br />
+      double sqrt (double x); <br />
+      float sqrtf (float X); <br />
   
-**POPIS**
-      Funkce sqrt() vypočítá druhou odmocninu z argumentu.
+**POPIS** <br />
+      Funkce sqrt() vypočítá druhou odmocninu z argumentu. <br />
       
-**NÁVRATOVÝ KÓD**
+**NÁVRATOVÝ KÓD** <br />
       Při úspěšném výpočtu je vrácena druhá odmocnina (jestliže X je reálné a kladné).
 
 ## Tiráž
