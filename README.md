@@ -16,7 +16,7 @@ API (zkratka pro Application Programming Interface) označuje v informatice rozh
 ### Příklad: 
 
 **SYNTAXE** <br />
-      #include <nase knihovna.h> <br />
+      #include &lt; math_lib.h &gt; <br />
       double sqrt (double x); <br />
       float sqrtf (float X); <br />
   
