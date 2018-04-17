@@ -1,5 +1,5 @@
 ﻿# Matematická kalkulačka 
-Kalkulačka obsahuje grafické rozhraní pro základní matematické operace(sčítání, odčítání, násobení, dělení) včetně volitelně přidané funkce pro výpočet modula. Kalkulačka byla vytvořena v jazyce Java za účelem školního projektu.
+Kalkulačka obsahuje grafické rozhraní pro základní matematické operace(sčítání, odčítání, násobení, dělení, faktoriál) včetně volitelně přidané funkce pro výpočet modula. Kalkulačka byla vytvořena v jazyce Java za účelem školního projektu.
 
 ## Instalace 
 Zde bude postup, jak instalovat kalkulačku.
