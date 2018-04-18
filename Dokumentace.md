@@ -1,26 +1,26 @@
 # Instalace produktu
-Produkt je moné nainstalovat spuštìním souboru "Calculator_setup". Následnì by mìla probìhnout kontrola administrátorského oprávnìní. Dále je uivatel vyzván k
-vybrání jazyka, ve kterém instalace bude probíhat.Poklepáním na tlaèítko další má uivatel monost si vybrat, kam se bude program instalovat. Defaultnì je vybrána cesta
-"C:\Program Files (x86), kde si instalaèní program automicky vytvoøí sloku s danım jménem. V monostech nechybí volba vlastního nastavení adresáøe, kam se program bude instalovat.
-Spoleènì s volbou adresáøe je uivatel informován, kolik místa na disku program zabere. V dalších krocích je uivatel dotázán, zda-li chce vytvoøit zástupce v nábidce Start a na ploše.
-Ještì pøed samotnou instalací má uivatel monost vidìt shrnutí, co vše se pøi instalaci vytvoøí. v pøípadì jiného rozhodnutí má samozøejmì monost se vrátit poklepáním na tlaèítko "Zpìt"
-a svoji volbu zmìnit. Kliknutím na tlaèítko "Instalovat" se provede instalace. Ještì pøed samotnım dokonèením instalace je uivateli zobrazeno pár uiteènıch informací o produktu a zároven
-je dotázán, zda-li chce produkt ihned po instalaci sputit.
+Produkt je moÅ¾nÃ© nainstalovat spuÅ¡tÄ›nÃ­m souboru "Calculator_setup". NÃ¡slednÄ› by mÄ›la probÄ›hnout kontrola administrÃ¡torskÃ©ho oprÃ¡vnÄ›nÃ­. DÃ¡le je uÅ¾ivatel vyzvÃ¡n k
+vybrÃ¡nÃ­ jazyka, ve kterÃ©m instalace bude probÃ­hat.PoklepÃ¡nÃ­m na tlaÄÃ­tko dalÅ¡Ã­ mÃ¡ uÅ¾ivatel moÅ¾nost si vybrat, kam se bude program instalovat. DefaultnÄ› je vybrÃ¡na cesta
+"C:\Program Files (x86), kde si instalaÄnÃ­ program automicky vytvoÅ™Ã­ sloÅ¾ku s danÃ½m jmÃ©nem. V moÅ¾nostech nechybÃ­ volba vlastnÃ­ho nastavenÃ­ adresÃ¡Å™e, kam se program bude instalovat.
+SpoleÄnÄ› s volbou adresÃ¡Å™e je uÅ¾ivatel informovÃ¡n, kolik mÃ­sta na disku program zabere. V dalÅ¡Ã­ch krocÃ­ch je uÅ¾ivatel dotÃ¡zÃ¡n, zda-li chce vytvoÅ™it zÃ¡stupce v nÃ¡bidce Start a na ploÅ¡e.
+JeÅ¡tÄ› pÅ™ed samotnou instalacÃ­ mÃ¡ uÅ¾ivatel moÅ¾nost vidÄ›t shrnutÃ­, co vÅ¡e se pÅ™i instalaci vytvoÅ™Ã­. v pÅ™Ã­padÄ› jinÃ©ho rozhodnutÃ­ mÃ¡ samozÅ™ejmÄ› moÅ¾nost se vrÃ¡tit poklepÃ¡nÃ­m na tlaÄÃ­tko "ZpÄ›t"
+a svoji volbu zmÄ›nit. KliknutÃ­m na tlaÄÃ­tko "Instalovat" se provede instalace. JeÅ¡tÄ› pÅ™ed samotnÃ½m dokonÄenÃ­m instalace je uÅ¾ivateli zobrazeno pÃ¡r uÅ¾iteÄnÃ½ch informacÃ­ o produktu a zÃ¡roven
+je dotÃ¡zÃ¡n, zda-li chce produkt ihned po instalaci sputit.
 
-# Odinstalace produktu pøes odinstalátor
-Pøejdìme do sloky s nainstalovanım produktem, zde by se mìl nacházet soubor "unins000.exe". Následnì jsme dotázáni, zda-li produkt chcme opravdu odinstalovat. V pøípadì kladné odpovìdi klikneme
-na Další a produkt bude následnì odinstalován se všemi jeho soubory.
+# Odinstalace produktu pÅ™es odinstalÃ¡tor
+PÅ™ejdÄ›me do sloÅ¾ky s nainstalovanÃ½m produktem, zde by se mÄ›l nachÃ¡zet soubor "unins000.exe". NÃ¡slednÄ› jsme dotÃ¡zÃ¡ni, zda-li produkt chcme opravdu odinstalovat. V pÅ™Ã­padÄ› kladnÃ© odpovÄ›di klikneme
+na DalÅ¡Ã­ a produkt bude nÃ¡slednÄ› odinstalovÃ¡n se vÅ¡emi jeho soubory.
 
-#Odinstalace produktu pøes Ovládací Panely
-Otevøete si Ovládací Panely, následnì pøejdìte do karty "Programy", kde si vyberte program Kalkulaèka. Oznaèením programu a kliknutím na tlaèítko odinstalovat budete dotázáni, zda-li chcete opravdu
-pokraèovat. Pøi kladné odpovìdi kliknìte na "Ano" a produkt bude odinstalován se všemi jeho soubory.
+# Odinstalace produktu pÅ™es OvlÃ¡dacÃ­ Panely
+OtevÅ™ete si OvlÃ¡dacÃ­ Panely, nÃ¡slednÄ› pÅ™ejdÄ›te do karty "Programy", kde si vyberte program KalkulaÄka. OznaÄenÃ­m programu a kliknutÃ­m na tlaÄÃ­tko odinstalovat budete dotÃ¡zÃ¡ni, zda-li chcete opravdu
+pokraÄovat. PÅ™i kladnÃ© odpovÄ›di kliknÄ›te na "Ano" a produkt bude odinstalovÃ¡n se vÅ¡emi jeho soubory.
 
-# Pouívání kalkulaèky
-Pøi spuštìní kalkulaèky doporuèujeme otevøít Nápovìdu, která se nachází v levo nahoøe a pøeèíst si informace o pouívání, pøedevším funkcí typu odmocnina.
-Kalkulaèka nabízí základní poèetní operace(sèítání, odèítání,násobení dìlení) a dvì mírnì pokroèilé operace(faktoriál, modulo). Do kalkulaèky je mono zadávat èísla pouze pomocí vyklikáním pøíslušnıch 
-tlaèítek, které kalkulaèka nabízí(0-9). Není moné tedy do kalkulaèky psát èísla z klávesnice. Takté není moné do kalkulaèky vkládat èísla, která jsme napø. zkopírovali.
-Naše kalkulaèka takté umoòuje poèítat pouze operace s dvìma èísli vyjma faktoriálu, kterı je proveden pouze po zadání jednoho èísla. Pøi psaní do kalulaèky máme k dispozici dva textboxy, 
-pøièem spodní slouí k zobrazení námi aktuálnì zadávaného èísla, a horní k zobrazení vısledku èi mezivısledku.
+# PouÅ¾Ã­vÃ¡nÃ­ kalkulaÄky
+PÅ™i spuÅ¡tÄ›nÃ­ kalkulaÄky doporuÄujeme otevÅ™Ã­t NÃ¡povÄ›du, kterÃ¡ se nachÃ¡zÃ­ v levo nahoÅ™e a pÅ™eÄÃ­st si informace o pouÅ¾Ã­vÃ¡nÃ­, pÅ™edevÅ¡Ã­m funkcÃ­ typu odmocnina.
+KalkulaÄka nabÃ­zÃ­ zÃ¡kladnÃ­ poÄetnÃ­ operace(sÄÃ­tÃ¡nÃ­, odÄÃ­tÃ¡nÃ­,nÃ¡sobenÃ­ dÄ›lenÃ­) a dvÄ› mÃ­rnÄ› pokroÄilÃ© operace(faktoriÃ¡l, modulo). Do kalkulaÄky je moÅ¾no zadÃ¡vat ÄÃ­sla pouze pomocÃ­ vyklikÃ¡nÃ­m pÅ™Ã­sluÅ¡nÃ½ch 
+tlaÄÃ­tek, kterÃ© kalkulaÄka nabÃ­zÃ­(0-9). NenÃ­ moÅ¾nÃ© tedy do kalkulaÄky psÃ¡t ÄÃ­sla z klÃ¡vesnice. TaktÃ©Å¾ nenÃ­ moÅ¾nÃ© do kalkulaÄky vklÃ¡dat ÄÃ­sla, kterÃ¡ jsme napÅ™. zkopÃ­rovali.
+NaÅ¡e kalkulaÄka taktÃ©Å¾ umoÅ¾Åˆuje poÄÃ­tat pouze operace s dvÄ›ma ÄÃ­sli vyjma faktoriÃ¡lu, kterÃ½ je proveden pouze po zadÃ¡nÃ­ jednoho ÄÃ­sla. PÅ™i psanÃ­ do kalulaÄky mÃ¡me k dispozici dva textboxy, 
+pÅ™iÄemÅ¾ spodnÃ­ slouÅ¾Ã­ k zobrazenÃ­ nÃ¡mi aktuÃ¡lnÄ› zadÃ¡vanÃ©ho ÄÃ­sla, a hornÃ­ k zobrazenÃ­ vÃ½sledku Äi mezivÃ½sledku.
 
  
              
