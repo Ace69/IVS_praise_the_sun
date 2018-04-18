@@ -1,66 +1,89 @@
-package GitHub;
+/************************************************************************
+* Název projektu: Kalkulačka                                            *
+* Balíček: Lib                                                      *
+* Soubor: MathLib.java                                                  *
+* Datum: 7.4.2018                                                       *
+* Autor: Tomáš Svěrák (xsvera04)                                        *
+*                                                                       *
+* Popis: Matematická knihovna pro kalkulačku                            *
+*                                                                       *
+************************************************************************/
 
 /**
- * @brief Matematicka knihovna pro kalkulacku.
- * @author Tomas Sverak (xsvera04)
- * @date 6.4. 2018
+ * @file MathLib.java 
+ * 
+ * @brief Matematická knihovna pro kalkulačku
+ */
+
+/**
+ * @package Lib
+ * 
+ * @brief Třída matematické knihovny
+ */
+package Lib;
+
+/**
+ * @brief Matematická knihovna pro kalkulačku.
+ * @author Tomáš Svěrák (xsvera04)
+ * @date 7.4.2018
  * @version 1.0
+ * @class Matematická knihovna pro kalkulačku.
  */
 public class MathLib {
     
     /**
-     * @brief Metoda secte dve cisla.
-     * @param cislo1 Prvni scitanec
-     * @param cislo2 Druhy scitanec
-     * @return Soucet cisla1 a cisla2
+     * @brief Metoda sečte dvě čísla.
+     * @param cislo1 První sčítanec
+     * @param cislo2 Druhý sčítanec
+     * @return Vrací součet čísel
      */
-    protected static double scitani(double cislo1, double cislo2){
+    public static double scitani(double cislo1, double cislo2){
         return cislo1 + cislo2;
     }
     
     /**
-     * @brief Metoda odecte dve cisla.
-     * @param cislo1 Mensenec
-     * @param cislo2 Mensitel
-     * @return Rozdil cisla1 a cisla2
+     * @brief Metoda odečte dvě čísla.
+     * @param cislo1 Menšenec
+     * @param cislo2 Menšitel
+     * @return Vrací rozdíl čísel
      */
-    protected static double odcitani(double cislo1, double cislo2){
+    public static double odcitani(double cislo1, double cislo2){
         return cislo1 - cislo2;
     }
     
     /**
-     * @brief Metoda vynasobi dve cisla.
-     * @param cislo1 Prvni cinitel
-     * @param cislo2 Druhy cinitel
-     * @return Soucin cisla1 a cisla2
+     * @brief Metoda vynásobí dvě čísla.
+     * @param cislo1 První činitel
+     * @param cislo2 Druhý činitel
+     * @return Vrací součin čísel
      */
-    protected static double nasobeni(double cislo1, double cislo2){
+    public static double nasobeni(double cislo1, double cislo2){
         return cislo1 * cislo2;
     }
     
     /**
-     * @brief Metoda vydeli dve cisla.
-     * @param delenec Cislo ktere chceme delit
-     * @param delitel Cislo kterym delime
+     * @brief Metoda vydělí dvě čísla.
+     * @param delenec Číslo které chceme dělit
+     * @param delitel Číslo kterým dělíme
      * @pre delitel != 0
-     * @throw ArithmeticExcpetion - pokud delitel = 0
-     * @return Podil delence a delitele
+     * @throw ArithmeticExcpetion - pokud dělitel = 0
+     * @return Vrací podíl čísel
      */
-    protected static double deleni(double delenec, double delitel){
+    public static double deleni(double delenec, double delitel){
         if(delitel == 0){
             throw new ArithmeticException("Deleni nulou");
         }
-    return delenec / delitel;
+        return delenec / delitel;
     }
     
     /**
-     * @brief Metoda vypocita faktorial zadaneho cisla.
-     * @param cislo Cislo ze ktereho chceme jeho faktorial.
-     * @pre cislo > 0
-     * @throw IllegalArgumentException - pokud je zadane cislo zaporne.
-     * @return Faktorial cisla.
+     * @brief Metoda vypočítá faktoriál zadaného čísla.
+     * @param cislo Číslo ze kterého chceme jeho faktoriál.
+     * @pre cislo >= 0
+     * @throw IllegalArgumentException - pokud je zadané číslo záporné.
+     * @return Faktoriál čísla.
      */
-    protected static double faktorial(double cislo){
+    public static double faktorial(double cislo){
         if(cislo < 0){
             throw new IllegalArgumentException("Zaporny faktorial");
         }
@@ -72,17 +95,16 @@ public class MathLib {
         for (int i = 2; i <= cislo; i++) {
             vysledek *= i;
         }
-        
         return vysledek;
     }
     
     /**
-     * @brief Metoda vypocita zaklad umocneny na hodnotu exponenty.
-     * @param zaklad Cislo ktere chceme umocnovat
-     * @param exponent Exponent kterym budeme umocnovat
-     * @return Zaklad^exponent
+     * @brief Metoda vypočítá základ umocněný na hodnotu exponentu.
+     * @param zaklad Číslo které chceme umocňovat
+     * @param exponent Exponent kterým budeme umocňovat
+     * @return Vrací výsledek mocnění
      */
-    protected static double mocnina(double zaklad, double exponent){
+    public static double mocnina(double zaklad, double exponent){
         if(exponent <= 0){
             throw new IllegalArgumentException("Exponent musi byt prirozeny");
         }
@@ -94,36 +116,34 @@ public class MathLib {
     }
     
     /**
-     * @brief Metoda vypocita odmocnina zadaneho stupne ze zakladu
-     * @param zaklad Cislo ktere chceme odmocnit
+     * @brief Metoda vypočítá odmocninu zadaného stupně ze základu.
+     * @param zaklad Číslo které chceme odmocnit
      * @param stupen Hodnota odmocniny
-     * @pre zaklad > 0 - vyyraz pod odmocninou nesmi byt zaporny
-     * @pre stupen != 0 odmocnina nesmi byt nulteho stupne
-     * @return zaklad^(1/stupen)
+     * @pre zaklad > 0 - výraz pod odmocninou nesmí být záporný
+     * @pre stupen != 0 odmocnina nesmí být nultého stupně
+     * @return Vrací výsledek odmocnění
      */
-    protected static double odmocnina(double zaklad, double stupen){
+    public static double odmocnina(double zaklad, double stupen){
         if(zaklad < 0){
             throw new IllegalArgumentException("Vyraz pod odmocninou nesmi byt zaporny");
         }
         if(stupen == 0){
             throw new IllegalArgumentException("Odmocnina nesmi byt nulteho stupne");
         }
-        
         return Math.pow(zaklad, 1.00 / stupen);
     }
     /**
-     * @brief Metoda vypocita modulo dvou cisel.
-     * @param delenec Cislo ktere chceme delit
-     * @param delitel Cislo kterym delime
+     * @brief Metoda vypočítá modulo dvou čísel.
+     * @param delenec Číslo které chceme dělit
+     * @param delitel Číslo kterým dělíme
      * @pre delitel != 0
-     * @throw ArithmeticExcpetion - pokud delitel = 0
-     * @return Zbytek po deleni dvou cisel
+     * @throw ArithmeticExcpetion - pokud dělitel = 0
+     * @return Vrací zbytek po dělení
      */
-    protected static double modulo(double delenec, double delitel){
+    public static double modulo(double delenec, double delitel){
         if(delitel == 0){
             throw new ArithmeticException("Deleni nulou");
         }
-        
         return delenec % delitel;
     }
-}
+} // public class MathLib()
