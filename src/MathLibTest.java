@@ -1,18 +1,42 @@
-package Math;
+/************************************************************************
+* Název projektu: Kalkulačka                                            *
+* Balíček: Tests                                                     *
+* Soubor: MathLibTest.java                                              *
+* Datum: 6.4.2018                                                       *
+* Autor: Tomáš Svěrák (xsvera04)                                        *
+*                                                                       *
+* Popis: Testy matematické knihovny                                     *
+*                                                                       *
+************************************************************************/
 
+/**
+ * @file MathLibTest.java 
+ * 
+ * @brief Testy matematické knihovny 
+ */
+
+/**
+ * @package Library
+ * 
+ * @brief Testy matematické knihovny
+ */
+package Tests;
+
+import Lib.MathLib;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * @author Tomas Sverak (xsvera04)
- * @date 7.4. 2018
+ * @brief Testy předepsané pro matematickou knihovnu.
+ * @author Tomáš Svěrák (xsvera04)
+ * @date 6.4. 2018
  * @version 1.0
- * @brief Testy predepsane pro matematicka knihovnu.
+ * @class Testy matematické knihovny
  */
 public class MathLibTest {
 
     /**
-     * @brief Test scitani dvou cisel.
+     * @brief Test sčítání dvou čísel.
      */
     @Test
     public void testScitani() {
@@ -30,7 +54,7 @@ public class MathLibTest {
     }
 
     /**
-     * @brief Test odcitani dvou cisel.
+     * @brief Test odčítání dvou čísel.
      */
     @Test
     public void testOdecitani() {
@@ -48,7 +72,7 @@ public class MathLibTest {
     }
 
     /**
-     * @brief Test nasobeni dvou cisel.
+     * @brief Test násobení dvou čísel.
      */
     @Test
     public void testNasobeni() {
@@ -65,7 +89,7 @@ public class MathLibTest {
     }
 
     /**
-     * @brief Test deleni dvou cisel.
+     * @brief Test dělení dvou čísel.
      */
     @Test
     public void testDeleni() {
@@ -82,7 +106,7 @@ public class MathLibTest {
     }
     
     /**
-     * @brief Test na deleni nulou
+     * @brief Test na dělení nulou
      */
     @Test (expected = ArithmeticException.class)
     public void testDeleniNulou() {
@@ -90,7 +114,7 @@ public class MathLibTest {
     }
 
     /**
-     * @brief Test faktorialu.
+     * @brief Test faktoriálu.
      */
     @Test
     public void testFaktorial() {
@@ -103,7 +127,7 @@ public class MathLibTest {
     }
     
     /**
-     * @brief Test zaporneho faktorialu.
+     * @brief Test záporného faktoriálu.
      */
     @Test (expected = IllegalArgumentException.class)
     public void testZapornyFaktorial() {
@@ -111,7 +135,7 @@ public class MathLibTest {
     }
     
     /**
-     * @brief Test zakladu umocneneho na exponent.
+     * @brief Test mocniny.
      */
     @Test
     public void testMocnina() {
@@ -126,14 +150,14 @@ public class MathLibTest {
     }
     
     /**
-     * @brief Test pokud exponent neni prirozene cislo.
+     * @brief Test pokud exponent mocniny není přirozené číslo.
      */
     @Test (expected = IllegalArgumentException.class)
     public void testNeprirozenaMocnina1() {
         MathLib.mocnina(1, 0);
     }
     /**
-     * @brief Druhy test pokud exponent neni prirozene cislo.
+     * @brief Druhý test pokud exponent mocniny není přirozené číslo.
      */
     @Test (expected = IllegalArgumentException.class)
     public void testNeprirozenaMocnina2() {
@@ -141,7 +165,7 @@ public class MathLibTest {
     }
     
     /**
-     * @brief Test zakladu umocneneho na exponent.
+     * @brief Test odmocniny.
      */
     @Test
     public void testOdmocnina() {
@@ -153,7 +177,7 @@ public class MathLibTest {
     }
     
     /**
-     * @brief Test zaporneho zakladu odmocniny.
+     * @brief Test záporného základu odmocniny.
      */
     @Test (expected = IllegalArgumentException.class)
     public void testZapornyZakladOdmocniny() {
@@ -161,7 +185,7 @@ public class MathLibTest {
     }
     
     /**
-     * @brief Test nulte odmocniny ze zakladu.
+     * @brief Test nulté odmocniny ze základu.
      */
     @Test (expected = IllegalArgumentException.class)
     public void testNultaOdmocnina() {
@@ -185,10 +209,10 @@ public class MathLibTest {
     
 
     /**
-     * @brief Test modulo nulou.
+     * @brief Test na modulo nulou.
      */
     @Test (expected = ArithmeticException.class)
     public void testModuloNulou() {
         MathLib.modulo(1, 0);
     }   
-}
+} // public class MathLibTest()
