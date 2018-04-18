@@ -23,5 +23,3 @@ run: $(MAIN).class
 
 clean:
         $(RM) *.class
-
-aa
