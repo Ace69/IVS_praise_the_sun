@@ -1,6 +1,6 @@
 /************************************************************************
 * Název projektu: Kalkulačka                                            *
-* Balíček: Lib                                                      *
+* Balíček: Lib                                                          *
 * Soubor: MathLib.java                                                  *
 * Datum: 7.4.2018                                                       *
 * Autor: Tomáš Svěrák (xsvera04)                                        *
@@ -18,16 +18,15 @@
 /**
  * @package Lib
  * 
- * @brief Třída matematické knihovny
+ * @brief Matematická knihovna
  */
 package Lib;
 
 /**
- * @brief Matematická knihovna pro kalkulačku.
+ * @brief Třída matematické knihovny.
  * @author Tomáš Svěrák (xsvera04)
  * @date 7.4.2018
  * @version 1.0
- * @class Matematická knihovna pro kalkulačku.
  */
 public class MathLib {
     

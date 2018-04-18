@@ -1,6 +1,6 @@
 /************************************************************************
 * Název projektu: Kalkulačka                                            *
-* Balíček: Tests                                                     *
+* Balíček: Mathlib                                                      *
 * Soubor: MathLibTest.java                                              *
 * Datum: 6.4.2018                                                       *
 * Autor: Tomáš Svěrák (xsvera04)                                        *
@@ -16,22 +16,21 @@
  */
 
 /**
- * @package Library
+ * @package Mathlib
  * 
  * @brief Testy matematické knihovny
  */
-package Tests;
+package Mathlib;
 
 import Lib.MathLib;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * @brief Testy předepsané pro matematickou knihovnu.
+ * @brief Třída testů předepsaných pro matematickou knihovnu.
  * @author Tomáš Svěrák (xsvera04)
  * @date 6.4. 2018
  * @version 1.0
- * @class Testy matematické knihovny
  */
 public class MathLibTest {
 
