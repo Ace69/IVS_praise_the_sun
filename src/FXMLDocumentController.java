@@ -5,6 +5,7 @@
  */
 package GitHub;
 
+import Lib.MathLib;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -21,7 +22,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 /**
- *
+ * @todo Faktorial omezit na 1 argument
  * @author fpolicar
  */
 public class FXMLDocumentController implements Initializable {
@@ -223,7 +224,7 @@ public class FXMLDocumentController implements Initializable {
     }
 
     //Pocetni operace
-    else if(event.getSource() == plus)
+    else if(event.getSource() == plus && operation == -1)
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 1; //Scitani
@@ -231,7 +232,7 @@ public class FXMLDocumentController implements Initializable {
         vypocet.setText(vypocet.getText() + "+");
         destecka = false;
     }
-    else if(event.getSource() == minus)
+    else if(event.getSource() == minus && operation == -1)
     {
         if(vysledek.getText().isEmpty()){
             vysledek.setText("-");
@@ -244,7 +245,7 @@ public class FXMLDocumentController implements Initializable {
             destecka = false;
         }
     }
-    else if(event.getSource() == krat)
+    else if(event.getSource() == krat && operation == -1)
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 3; //Nasobeni
@@ -252,7 +253,7 @@ public class FXMLDocumentController implements Initializable {
         vypocet.setText(vypocet.getText() + "*");
         destecka = false;
     }
-    else if(event.getSource() == deleno)
+    else if(event.getSource() == deleno && operation == -1)
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 4; //Deleni
@@ -260,15 +261,15 @@ public class FXMLDocumentController implements Initializable {
         vypocet.setText(vypocet.getText() + "/");
         destecka = false;
     }
-    else if(event.getSource() == odmocnina)
+    else if(event.getSource() == odmocnina && operation == -1)
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 5; //Odmocnina
         vysledek.setText("");
-        vypocet.setText("√" + vypocet.getText());
+        vypocet.setText("root" + vypocet.getText());
         textDopredu = true;
     }
-    else if(event.getSource() == mocnina)
+    else if(event.getSource() == mocnina && operation == -1)
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 6; //Mocnina
@@ -276,7 +277,7 @@ public class FXMLDocumentController implements Initializable {
         vypocet.setText(vypocet.getText() + "^");
         destecka = false;
     }
-    else if(event.getSource() == modulo)
+    else if(event.getSource() == modulo && operation == -1)
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 7; //Modulo
@@ -284,14 +285,13 @@ public class FXMLDocumentController implements Initializable {
         vypocet.setText(vypocet.getText() + "%");
         destecka = false;
     }
-    else if(event.getSource() == faktorial)
+    else if(event.getSource() == faktorial && operation == -1)
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 8; //Faktorial
         vysledek.setText("");
         vypocet.setText(vypocet.getText() + "!");
         destecka = false;
-        
     }
     
     else if(event.getSource() == rovno)
@@ -400,11 +400,12 @@ public class FXMLDocumentController implements Initializable {
                 break;
            
         }
+        operation = -1;
         textDopredu = false;
         }
           
     }else{
-        vysledek.setText("Nebylo nic zadano");
+        //vysledek.setText("Nebylo nic zadano");
     }
     
     }
