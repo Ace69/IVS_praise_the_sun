@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package GitHub;
+package Calculator;
 
 import Lib.MathLib;
 import java.net.URL;
@@ -33,7 +33,7 @@ public class FXMLDocumentController implements Initializable {
     boolean textDopredu = false; //pokud je true, zapisuje text vypoctu dopredu 
     String cislo;
     Alert alert = new Alert(AlertType.ERROR, "File already exists. Do you want to override?");
-    
+    int pocitadloMinus;
     DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.ENGLISH);
     DecimalFormat df = new DecimalFormat("#############.####",formatSymbols);
     
@@ -207,7 +207,7 @@ public class FXMLDocumentController implements Initializable {
             vypocet.setText(vypocet.getText() + "0");
         }
     }
-    else if(event.getSource() == cara)
+    else if(event.getSource() == cara && !vysledek.getText().isEmpty())
     {   
         if(destecka == false){
             vysledek.setText(vysledek.getText() + ".");
@@ -221,10 +221,11 @@ public class FXMLDocumentController implements Initializable {
         vysledek.setText("");
         vypocet.setText("");
         destecka = false;
+        operation = -1;
     }
 
     //Pocetni operace
-    else if(event.getSource() == plus && operation == -1)
+    else if(event.getSource() == plus && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 1; //Scitani
@@ -232,12 +233,12 @@ public class FXMLDocumentController implements Initializable {
         vypocet.setText(vypocet.getText() + "+");
         destecka = false;
     }
-    else if(event.getSource() == minus && operation == -1)
+    else if(event.getSource() == minus)
     {
         if(vysledek.getText().isEmpty()){
             vysledek.setText("-");
             vypocet.setText(vypocet.getText() + "-");
-        }else{
+        }else if(!vysledek.getText().matches("-")){
             data = Double.parseDouble(vysledek.getText());
             operation = 2; //Odcitni
             vysledek.setText("");
@@ -245,7 +246,7 @@ public class FXMLDocumentController implements Initializable {
             destecka = false;
         }
     }
-    else if(event.getSource() == krat && operation == -1)
+    else if(event.getSource() == krat && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 3; //Nasobeni
@@ -253,7 +254,7 @@ public class FXMLDocumentController implements Initializable {
         vypocet.setText(vypocet.getText() + "*");
         destecka = false;
     }
-    else if(event.getSource() == deleno && operation == -1)
+    else if(event.getSource() == deleno && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 4; //Deleni
@@ -261,15 +262,15 @@ public class FXMLDocumentController implements Initializable {
         vypocet.setText(vypocet.getText() + "/");
         destecka = false;
     }
-    else if(event.getSource() == odmocnina && operation == -1)
+    else if(event.getSource() == odmocnina && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 5; //Odmocnina
         vysledek.setText("");
-        vypocet.setText("root" + vypocet.getText());
+        vypocet.setText("√" + vypocet.getText());
         textDopredu = true;
     }
-    else if(event.getSource() == mocnina && operation == -1)
+    else if(event.getSource() == mocnina && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 6; //Mocnina
@@ -277,7 +278,7 @@ public class FXMLDocumentController implements Initializable {
         vypocet.setText(vypocet.getText() + "^");
         destecka = false;
     }
-    else if(event.getSource() == modulo && operation == -1)
+    else if(event.getSource() == modulo && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
         operation = 7; //Modulo
@@ -285,18 +286,30 @@ public class FXMLDocumentController implements Initializable {
         vypocet.setText(vypocet.getText() + "%");
         destecka = false;
     }
-    else if(event.getSource() == faktorial && operation == -1)
+    else if(event.getSource() == faktorial && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
-        operation = 8; //Faktorial
-        vysledek.setText("");
-        vypocet.setText(vypocet.getText() + "!");
         destecka = false;
+        Double ans = 0d;
+        try{
+            ans = MathLib.faktorial(data);
+            if(ans.isInfinite() || ans.isNaN()){
+                vysledek.setText("");
+                vypocet.setText("");
+            }else{
+                vysledek.setText(String.valueOf(df.format(ans)));
+                vypocet.setText(String.valueOf(df.format(ans)));
+            }
+        }catch(IllegalArgumentException e ){
+            alert.setContentText("Faktorial musi byt nezaporny");
+            vysledek.setText("");
+            vypocet.setText("");
+            alert.showAndWait();
+        }
     }
     
     else if(event.getSource() == rovno)
     {
-        
         if(!vypocet.getText().isEmpty()){
         Float druhyOperand;
         Double ans = 0d;
@@ -306,24 +319,39 @@ public class FXMLDocumentController implements Initializable {
                 if(!vysledek.getText().isEmpty()){
                     druhyOperand = Float.parseFloat(vysledek.getText());
                     ans = MathLib.scitani(data, druhyOperand);
-                    vysledek.setText(String.valueOf(df.format(ans)));  
-                    vypocet.setText(String.valueOf(df.format(ans)));
+                    if(ans.isInfinite() || ans.isNaN()){
+                        vysledek.setText("");
+                        vypocet.setText("");
+                    }else{
+                        vysledek.setText(String.valueOf(df.format(ans)));
+                        vypocet.setText(String.valueOf(df.format(ans)));
+                    }
                 }
                 break;
             case 2: //Odcitani
                 if(!vysledek.getText().isEmpty()){
                     druhyOperand = Float.parseFloat(vysledek.getText());
                     ans = MathLib.odcitani(data, druhyOperand);
-                    vysledek.setText(String.valueOf(df.format(ans)));
-                    vypocet.setText(String.valueOf(df.format(ans)));
+                    if(ans.isInfinite() || ans.isNaN()){
+                        vysledek.setText("");
+                        vypocet.setText("");
+                    }else{
+                        vysledek.setText(String.valueOf(df.format(ans)));
+                        vypocet.setText(String.valueOf(df.format(ans)));
+                    }
                 }
                 break;
             case 3: //Nasobeni
                 if(!vysledek.getText().isEmpty()){
                     druhyOperand = Float.parseFloat(vysledek.getText());
                     ans = MathLib.nasobeni(data, druhyOperand);
-                    vysledek.setText(String.valueOf(df.format(ans)));
-                    vypocet.setText(String.valueOf(df.format(ans)));
+                    if(ans.isInfinite()){
+                        vysledek.setText("");
+                        vypocet.setText("");
+                    }else{
+                        vysledek.setText(String.valueOf(df.format(ans)));
+                        vypocet.setText(String.valueOf(df.format(ans)));
+                    }
                 }
                 break;
             case 4: //Deleni
@@ -331,8 +359,13 @@ public class FXMLDocumentController implements Initializable {
                     try{
                         druhyOperand = Float.parseFloat(vysledek.getText());
                         ans = MathLib.deleni(data, druhyOperand);
-                        vysledek.setText(String.valueOf(df.format(ans)));
-                        vypocet.setText(String.valueOf(df.format(ans)));
+                        if(ans.isInfinite() || ans.isNaN()){
+                            vysledek.setText("");
+                            vypocet.setText("");
+                        }else{
+                            vysledek.setText(String.valueOf(df.format(ans)));
+                            vypocet.setText(String.valueOf(df.format(ans)));
+                        }
                     }catch(ArithmeticException e){
                         alert.setContentText("Nelze delit nulou!");
                         vysledek.setText("");
@@ -346,8 +379,13 @@ public class FXMLDocumentController implements Initializable {
                     try{
                         druhyOperand = Float.parseFloat(vysledek.getText());
                         ans = MathLib.odmocnina(data, druhyOperand);
-                        vysledek.setText(String.valueOf(df.format(ans)));
-                        vypocet.setText(String.valueOf(df.format(ans)));
+                        if(ans.isInfinite() || ans.isNaN()){
+                            vysledek.setText("");
+                            vypocet.setText("");
+                        }else{
+                            vysledek.setText(String.valueOf(df.format(ans)));
+                            vypocet.setText(String.valueOf(df.format(ans)));
+                        }
                     }catch(IllegalArgumentException e){
                         alert.setContentText("Vyraz pod odmocninou nesmi byt zaporny a zaroven odmocnina nesmi byt nulteho stupne");
                         vysledek.setText("");
@@ -361,8 +399,13 @@ public class FXMLDocumentController implements Initializable {
                     try{
                         druhyOperand = Float.parseFloat(vysledek.getText());
                         ans = MathLib.mocnina(data, druhyOperand);
-                        vysledek.setText(String.valueOf(df.format(ans)));
-                        vypocet.setText(String.valueOf(df.format(ans)));
+                        if(ans.isInfinite() || ans.isNaN()){
+                            vysledek.setText("");
+                            vypocet.setText("");
+                        }else{
+                            vysledek.setText(String.valueOf(df.format(ans)));
+                            vypocet.setText(String.valueOf(df.format(ans)));
+                        }
                     }catch(IllegalArgumentException e){
                         alert.setContentText("Exponent musi byt prirozene cislo");
                         vysledek.setText("");
@@ -376,8 +419,13 @@ public class FXMLDocumentController implements Initializable {
                     try{
                         druhyOperand = Float.parseFloat(vysledek.getText());
                         ans = MathLib.modulo(data, druhyOperand);
-                        vysledek.setText(String.valueOf(df.format(ans)));
-                        vypocet.setText(String.valueOf(df.format(ans)));
+                        if(ans.isInfinite() || ans.isNaN()){
+                            vysledek.setText("");
+                            vypocet.setText("");
+                        }else{
+                            vysledek.setText(String.valueOf(df.format(ans)));
+                            vypocet.setText(String.valueOf(df.format(ans)));
+                        }
                     }catch(ArithmeticException e){
                         alert.setContentText("Nelze delit nulou");
                         vysledek.setText("");
@@ -386,24 +434,15 @@ public class FXMLDocumentController implements Initializable {
                     }
                 }
                 break;
-            case 8: //Faktorial
-                try{
-                    ans = MathLib.faktorial(data);
-                    vysledek.setText(String.valueOf(df.format(ans)));
-                    vypocet.setText(String.valueOf(ans));
-                }catch(IllegalArgumentException e ){
-                    alert.setContentText("Faktorial musi byt nezaporny");
-                    vysledek.setText("");
-                    vypocet.setText("");
-                    alert.showAndWait();
-                }
-                break;
-           
         }
         operation = -1;
         textDopredu = false;
+        if(vypocet.getText().contains(".")){
+            destecka = true;
+        }else{
+            destecka = false;
         }
-          
+        }
     }else{
         //vysledek.setText("Nebylo nic zadano");
     }
