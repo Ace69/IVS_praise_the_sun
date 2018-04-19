@@ -1,12 +1,6 @@
 ﻿# Matematická kalkulačka 
 Kalkulačka obsahuje grafické rozhraní pro základní matematické operace(sčítání, odčítání, násobení, dělení, faktoriál) včetně volitelně přidané funkce pro výpočet modula. Kalkulačka byla vytvořena v jazyce Java za účelem školního projektu.
 
-## Instalace 
-Zde bude postup, jak instalovat kalkulačku.
-
-## Testy
-Potřeba dořešit.
-
 ## Prostředí 
 Windows 7 64bit
 
