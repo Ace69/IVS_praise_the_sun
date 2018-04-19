@@ -1,24 +1,24 @@
-/****************************************************************************
-* Název projektu: Kalkulaèka                                                *
-* Balíèek: Profiling                                                        *
+ï»¿/****************************************************************************
+* NÃ¡zev projektu: KalkulaÄka                                                *
+* BalÃ­Äek: Profiling                                                        *
 * Soubor: Profiling.java                                                    *
 * Datum: 7.4.2018                                                           *
 * Autor: David Bulawa(xbulaw01)                                             *
 *                                                                           *
-* Popis: Profiling - vıpoèet smìrodatné odchylky pomocí mat. knihovny.      *
+* Popis: Profiling - vÃ½poÄet smÄ›rodatnÃ© odchylky pomocÃ­ mat. knihovny.      *
 *                                                                           *
 ****************************************************************************/
 
 /**
  * @file Profiling.java 
  * 
- * @brief Profiling matematické knihovny.
+ * @brief Profiling matematickÃ© knihovny.
  */
 
 /**
  * @package Profiling
  * 
- * @brief Profiling matematické knihovny.
+ * @brief Profiling matematickÃ© knihovny.
  */
 package Profiling;
 
@@ -27,7 +27,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * @brief Tøída pro vıpoèet smìrodatné odchylky
+ * @brief TÅ™Ã­da pro vÃ½poÄet smÄ›rodatnÃ© odchylky
  * @author David Bulawa(xbulaw01)
  * @date 7.4.2018
  * @version 1.0
@@ -35,43 +35,43 @@ import java.util.Scanner;
 public class Profiling {
     
     /**
-     * @brief Funkce pro vıpoèet aritmetického prùmìru pole.
-     * @param pole Pole nad kterım prùmìrnou hodnotu poèítáme.
-     * @return Vrací prùmìrnou hodnotu prvkù v poli.
+     * @brief Funkce pro vÃ½poÄet aritmetickÃ©ho prÅ¯mÄ›ru pole.
+     * @param pole Pole nad kterÃ½m prÅ¯mÄ›rnou hodnotu poÄÃ­tÃ¡me.
+     * @return VracÃ­ prÅ¯mÄ›rnou hodnotu prvkÅ¯ v poli.
      */
     public static double prumer(ArrayList<Double> pole){
        double prumer = 0;
-       //Seète všechny prvky v poli
+       //SeÄte vÅ¡echny prvky v poli
        for(int i = 0; i < pole.size();i++){
          prumer = MathLib.scitani(prumer, pole.get(i));
        }
-       //Vydìlíme poètem
+       //VydÄ›lÃ­me poÄtem
        return MathLib.deleni(prumer, pole.size());
     }
     
     /**
-     * @brief Funkce pro vıpoèet smìrodatné odchylky prvkù v poli.
-     * @param pole Pole nad kterım smìrodatnou odchylku poèítáme.
-     * @return Vrací smìrodatnou odchylku prvkù v poli.
+     * @brief Funkce pro vÃ½poÄet smÄ›rodatnÃ© odchylky prvkÅ¯ v poli.
+     * @param pole Pole nad kterÃ½m smÄ›rodatnou odchylku poÄÃ­tÃ¡me.
+     * @return VracÃ­ smÄ›rodatnou odchylku prvkÅ¯ v poli.
      */
     public static double smOdchylka(ArrayList<Double> pole){
         double rada = 0;
-        //Do promìnné øada ukládáme sumu prvkù v poli^2
+        //Do promÄ›nnÃ© Å™ada uklÃ¡dÃ¡me sumu prvkÅ¯ v poli^2
         for (int i = 0; i < pole.size(); i++) {
             rada += MathLib.mocnina(pole.get(i), 2);
         }
         double tmp = 0;
-        //Do promìnné tmp si uloíme poèet prvkù * prùmìr pole^2
+        //Do promÄ›nnÃ© tmp si uloÅ¾Ã­me poÄet prvkÅ¯ * prÅ¯mÄ›r pole^2
         tmp = MathLib.nasobeni(pole.size(), MathLib.mocnina(prumer(pole), 2));
-        //Tyto hodnoty od sebe odeèteme
+        //Tyto hodnoty od sebe odeÄteme
         tmp = rada - tmp;
-        //Nakonec pøinásobíme 1/PoèetPrvkù - 1 a celé to umocníme
+        //Nakonec pÅ™inÃ¡sobÃ­me 1/PoÄetPrvkÅ¯ - 1 a celÃ© to umocnÃ­me
         return MathLib.odmocnina(MathLib.nasobeni(MathLib.deleni(1,MathLib.odcitani(pole.size(), 1)), tmp), 2);
     }
     
     /**
-     * @brief Vypíše vısledek vıpoètu smìrodatné odchylky posloupnosti èísel.
-     * @param args Argumenty pøíkazové øádky 
+     * @brief VypÃ­Å¡e vÃ½sledek vÃ½poÄtu smÄ›rodatnÃ© odchylky posloupnosti ÄÃ­sel.
+     * @param args Argumenty pÅ™Ã­kazovÃ© Å™Ã¡dky 
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

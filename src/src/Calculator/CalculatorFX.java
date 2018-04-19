@@ -1,7 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/************************************************************************
+* Název projektu: Kalkulačka                                            *
+* Balíček: Calculator                                                   *
+* Soubor: CalculatorFX.java                                             *
+* Datum: 15.4.2018                                                      *
+* Autor: František Policar (xpolic04)                                   *
+*                                                                       *
+* Popis: Spouštění kalkulačky                                           *
+*                                                                       *
+************************************************************************/
+
+/**
+ * @file CalculatorFX.java 
+ * 
+ * @brief Spouštění kalkulačky
+ */
+
+/**
+ * @package Calculator
+ * 
+ * @brief GUI a funkce kalkulačky
  */
 package Calculator;
 
@@ -9,32 +26,37 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
 /**
- *
- * @author fpolicar
+ * @brief Třída spouštící kalkulačku.
+ * @author František Policat (xpolic04)
+ * @date 15.4.2018
+ * @version 1.0
  */
 public class CalculatorFX extends Application {
     
+    /**
+     * @brief Vytvoření okna aplikace.
+     * @param stage Tělo aplikace
+     * @throws Exception 
+     */
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
         Scene scene = new Scene(root);
-                
+        
+        stage.setTitle("Kalkulačka v1.0");
         stage.setScene(scene);
         stage.show();
-        
     }
 
     /**
-     * @param args the command line arguments
+     * @Brief Spouští celou aplikaci.
+     * @param args Argumenty příkazové řádky
      */
     public static void main(String[] args) {
         launch(args);
     }
-    
-}
+} // public class CalculatorFX
