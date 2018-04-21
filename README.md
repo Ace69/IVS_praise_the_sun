@@ -5,6 +5,7 @@ Kalkulačka obsahuje grafické rozhraní pro základní matematické operace(sč
 Windows 7 64bit
 
 ## Autoři 
+**Praise the sun** <br />
 David Bulawa (xbulaw01) <br />
 Jakub Dolejší (xdolej09) <br />
 František Policar (xpolic04) <br />
