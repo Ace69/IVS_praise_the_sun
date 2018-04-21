@@ -538,8 +538,11 @@ public class FXMLDocumentController implements Initializable {
     }
     }// void handleButtonAction(ActionEvent event){}
     
-	/**
-	 *
+    /**
+     * @brief Inicializace controller
+     * @param url Lokace pro zjištění relativních cest ke kořenovému objektu
+     * @param rb Zdroje použíté pro nalezení kořenového objektu
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
