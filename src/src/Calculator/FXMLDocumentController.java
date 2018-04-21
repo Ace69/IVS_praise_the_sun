@@ -50,12 +50,12 @@ import javafx.scene.control.Alert.AlertType;
  */
 public class FXMLDocumentController implements Initializable {
     Double data; /**<@brief Zadané číslo */
-    int operation = -1; /**@brief Početní operace která se bude provádět */
+    int operation = -1; /**<@brief Početní operace která se bude provádět */
     boolean destecka = false; /**<@brief Nastaví true pokud už byla zadána des. tečka */
     Alert alert = new Alert(AlertType.ERROR, ""); /**<@brief Výpis chybové hlášky  */
     DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.ENGLISH); /**<@brief Přepnutí na desetinnou tečku */
     DecimalFormat df = new DecimalFormat("#############.####",formatSymbols); /**<@brief Upřesnění formátu čísel */
-    Alert helpAlert = new Alert(AlertType.INFORMATION, "Napověda"); //Vyskakovaci okno na napovedu
+    Alert helpAlert = new Alert(AlertType.INFORMATION, "Napověda"); /**<@Vyskakovaci okno na nápovědu */
     
     /**
      * @brief Tlačítko pro desetinnou čárku
@@ -100,7 +100,7 @@ public class FXMLDocumentController implements Initializable {
     private Button jedna;
     
     /**
-     * 
+     * Tlačítko operace násobení
      */
     @FXML
     private Button krat;
@@ -184,7 +184,7 @@ public class FXMLDocumentController implements Initializable {
     private Button tri;
     
     /**
-     * @brief Tlačítko pro napovedu
+     * @brief Tlačítko pro nápovědu
      */
     @FXML
     private Button help;
@@ -278,8 +278,8 @@ public class FXMLDocumentController implements Initializable {
 "Program Calculator je možné používat na jednoduché výpočty, \n" +
 "jako je sčítání, odčítání, násobení, dělení, odmocnina, mocnina, faktoriál a modulo. \n" +
 "\n" +
-"Pro výběr čísel a operátorů požíváme levé talčítko myši. \n" +
-"Na výsledek a výpočty nám slouží dvě textové pole ve vrchí části kalkulačky. \n" +
+"Pro výběr čísel a operátorů používáme levé talčítko myši. \n" +
+"Na výsledek a výpočty nám slouží dvě textové pole ve vrchní části kalkulačky. \n" +
 "\n" +
 "1. Sčítání \n" +
 "Zadáme první číslo, poté vybereme operátor \"+\" a zadáme druhé číslo. \n" +
@@ -538,6 +538,8 @@ public class FXMLDocumentController implements Initializable {
     }
     }// void handleButtonAction(ActionEvent event){}
     
+	/**
+	 *
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
