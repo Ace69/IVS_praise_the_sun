@@ -1,3 +1,4 @@
+
 /************************************************************************
 * Název projektu: Kalkulačka                                            *
 * Balíček: Calculator                                                   *
@@ -21,6 +22,7 @@
  * 
  * @brief GUI a funkce kalkulačky
  */
+
 package Calculator;
 
 import Lib.MathLib;
@@ -30,7 +32,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import static java.lang.Math.random;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
@@ -45,14 +49,13 @@ import javafx.scene.control.Alert.AlertType;
  * @version 1.0
  */
 public class FXMLDocumentController implements Initializable {
-    
     Double data; /**<@brief Zadané číslo */
     int operation = -1; /**@brief Početní operace která se bude provádět */
     boolean destecka = false; /**<@brief Nastaví true pokud už byla zadána des. tečka */
-    boolean textDopredu = false; /**<@brief Pokud je true, zapisuje text výpočtu dopředu */ 
-    Alert alert = new Alert(AlertType.ERROR, "File already exists. Do you want to override?"); /**<@brief Výpis chybové hlášky  */
+    Alert alert = new Alert(AlertType.ERROR, ""); /**<@brief Výpis chybové hlášky  */
     DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.ENGLISH); /**<@brief Přepnutí na desetinnou tečku */
     DecimalFormat df = new DecimalFormat("#############.####",formatSymbols); /**<@brief Upřesnění formátu čísel */
+    Alert helpAlert = new Alert(AlertType.INFORMATION, "Napověda"); //Vyskakovaci okno na napovedu
     
     /**
      * @brief Tlačítko pro desetinnou čárku
@@ -181,6 +184,11 @@ public class FXMLDocumentController implements Initializable {
     private Button tri;
     
     /**
+     * @brief Tlačítko pro napovedu
+     */
+    @FXML
+    private Button help;
+    /**
      * @brief Spodní textové pole zobrazující výsledek
      */
     @FXML
@@ -201,92 +209,53 @@ public class FXMLDocumentController implements Initializable {
     if(event.getSource() == jedna)
     {
         vysledek.setText(vysledek.getText() + "1");
-        if(textDopredu == true){
-            vypocet.setText("1" + vypocet.getText()); 
-        }else{
-            vypocet.setText(vypocet.getText() + "1");
-        }
+        vypocet.setText(vypocet.getText() + "1");
+
     }
     else if(event.getSource() == dva)
     {
         vysledek.setText(vysledek.getText() + "2");
-        if(textDopredu == true){
-            vypocet.setText("2" + vypocet.getText()); 
-        }else{
-            vypocet.setText(vypocet.getText() + "2");
-        }
+        vypocet.setText(vypocet.getText() + "2");
     }
     else if(event.getSource() == tri)
     {
         vysledek.setText(vysledek.getText() + "3");
-        if(textDopredu == true){
-            vypocet.setText("3" + vypocet.getText()); 
-        }else{
-            vypocet.setText(vypocet.getText() + "3");
-        }
+        vypocet.setText(vypocet.getText() + "3");
     }
     else if(event.getSource() == ctyri)
     {
-        vysledek.setText(vysledek.getText() + "4");
-        if(textDopredu == true){
-            vypocet.setText("4" + vypocet.getText()); 
-        }else{
-            vypocet.setText(vypocet.getText() + "4");
-        }
+        vysledek.setText(vysledek.getText() + "4"); 
+        vypocet.setText(vypocet.getText() + "4");
     }
     else if(event.getSource() == pet)
     {
         vysledek.setText(vysledek.getText() + "5");
-        if(textDopredu == true){
-            vypocet.setText("5" + vypocet.getText()); 
-        }else{
-            vypocet.setText(vypocet.getText() + "5");
-        }
+        vypocet.setText(vypocet.getText() + "5");
     }
     else if(event.getSource() == sest)
     {
         vysledek.setText(vysledek.getText() + "6");
-        if(textDopredu == true){
-            vypocet.setText("6" + vypocet.getText()); 
-        }else{
-            vypocet.setText(vypocet.getText() + "6");
-        }
+        vypocet.setText(vypocet.getText() + "6");
     }
     else if(event.getSource() == sedm)
     {
-        vysledek.setText(vysledek.getText() + "7");
-        if(textDopredu == true){
-            vypocet.setText("7" + vypocet.getText()); 
-        }else{
-            vypocet.setText(vypocet.getText() + "7");
-        }
+        vysledek.setText(vysledek.getText() + "7"); 
+        vypocet.setText(vypocet.getText() + "7");
     }
     else if(event.getSource() == osm)
     {
         vysledek.setText(vysledek.getText() + "8");
-        if(textDopredu == true){
-            vypocet.setText("8" + vypocet.getText()); 
-        }else{
-            vypocet.setText(vypocet.getText() + "8");
-        }
+        vypocet.setText(vypocet.getText() + "8");
     }
     else if(event.getSource() == devet)
     {
         vysledek.setText(vysledek.getText() + "9");
-        if(textDopredu == true){
-            vypocet.setText("9" + vypocet.getText()); 
-        }else{
-            vypocet.setText(vypocet.getText() + "9");
-        }
+        vypocet.setText(vypocet.getText() + "9");
     }
     else if(event.getSource() == nula)
     {
-        vysledek.setText(vysledek.getText() + "0");
-       if(textDopredu == true){
-            vypocet.setText("0" + vypocet.getText()); 
-        }else{
-            vypocet.setText(vypocet.getText() + "0");
-        }
+        vysledek.setText(vysledek.getText() + "0"); 
+        vypocet.setText(vypocet.getText() + "0");
     }
     else if(event.getSource() == cara && !vysledek.getText().isEmpty())
     {   
@@ -296,7 +265,7 @@ public class FXMLDocumentController implements Initializable {
             destecka = true;
         }
     }
-    //Mazání
+    //Mazani
     else if(event.getSource() == smazat)
     {
         vysledek.setText("");
@@ -304,12 +273,56 @@ public class FXMLDocumentController implements Initializable {
         destecka = false;
         operation = -1;
     }
-
-    //Početní operace
+    else if(event.getSource() == help){
+        helpAlert.setContentText(
+"Program Calculator je možné používat na jednoduché výpočty, \n" +
+"jako je sčítání, odčítání, násobení, dělení, odmocnina, mocnina, faktoriál a modulo. \n" +
+"\n" +
+"Pro výběr čísel a operátorů požíváme levé talčítko myši. \n" +
+"Na výsledek a výpočty nám slouží dvě textové pole ve vrchí části kalkulačky. \n" +
+"\n" +
+"1. Sčítání \n" +
+"Zadáme první číslo, poté vybereme operátor \"+\" a zadáme druhé číslo. \n" +
+"Př: 4+4=8\n" +
+"\n" +
+"2. Odčítání \n" +
+"Zadáme první číslo, poté vybereme operátor \"-\" a zadáme druhé číslo.\n" +
+"Př: 8-4=4\n" +
+"\n" +
+"3. Násobení\n" +
+"Zadáme první číslo, poté vybereme operátor \"*\" a zadáme druhé číslo.\n" +
+"Př: 4*4=16\n" +
+"\n" +
+"4. Dělení\n" +
+"Zadáme první číslo, poté vybereme operátor \"/\" a zadáme druhé číslo.\n" +
+"Př: 8/4=2\n" +
+"\n" +
+"5. Odmocnina\n" +
+"Zadáme první číslo, které bude pod odmocninou, poté vybereme operátor \"√\" a zadáme druhé číslo.\n" +
+"Př: 2√16=4\n" +
+"\n" +
+"6. Mocnina\n" +
+"Zadáme první číslo, poté vybereme operátor \"^\" a zadáme druhé číslo.\n" +
+"Př: 4^2=16\n" +
+"\n" +
+"7. Faktorial\n" +
+"Zadáme číslo a vybereme operátor \"!\", po stisku operátoru \"=\", vypočítá faktoriál zadaného čísla.\n" +
+"Př: 4!=24\n" +
+"\n" +
+"8. Modulo\n" +
+"Zadáme první číslo, poté vybereme operátor \"%\" a zadáme druhé číslo, výsledek je zbytek po dělení.\n" +
+"Př: 5%3=2\n" +
+"\n" +
+"9. Rovná se\n" +
+"Pro výsledek zadáváme operátor \"=\". \n" +
+"");
+        helpAlert.showAndWait();
+    }
+    //Pocetni operace
     else if(event.getSource() == plus && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
-        operation = 1; //Sčítání
+        operation = 1; //Scitani
         vysledek.setText("");
         vypocet.setText(vypocet.getText() + "+");
         destecka = false;
@@ -321,7 +334,7 @@ public class FXMLDocumentController implements Initializable {
             vypocet.setText(vypocet.getText() + "-");
         }else if(!vysledek.getText().matches("-")){
             data = Double.parseDouble(vysledek.getText());
-            operation = 2; //Odčítání
+            operation = 2; //Odcitni
             vysledek.setText("");
             vypocet.setText(vypocet.getText() + "-");
             destecka = false;
@@ -330,7 +343,7 @@ public class FXMLDocumentController implements Initializable {
     else if(event.getSource() == krat && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
-        operation = 3; //Násobení
+        operation = 3; //Nasobeni
         vysledek.setText("");
         vypocet.setText(vypocet.getText() + "*");
         destecka = false;
@@ -338,7 +351,7 @@ public class FXMLDocumentController implements Initializable {
     else if(event.getSource() == deleno && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
-        operation = 4; //Dělení
+        operation = 4; //Deleni
         vysledek.setText("");
         vypocet.setText(vypocet.getText() + "/");
         destecka = false;
@@ -348,8 +361,7 @@ public class FXMLDocumentController implements Initializable {
         data = Double.parseDouble(vysledek.getText());
         operation = 5; //Odmocnina
         vysledek.setText("");
-        vypocet.setText("√" + vypocet.getText());
-        textDopredu = true;
+        vypocet.setText( vypocet.getText() + " root " );
     }
     else if(event.getSource() == mocnina && operation == -1 && !vysledek.getText().isEmpty())
     {
@@ -387,12 +399,16 @@ public class FXMLDocumentController implements Initializable {
             vypocet.setText("");
             alert.showAndWait();
         }
-    } else if(event.getSource() == rovno){
+    }
+    
+    else if(event.getSource() == rovno)
+    {
         if(!vypocet.getText().isEmpty()){
-            Float druhyOperand;
-            Double ans = 0d;
-            switch(operation){
-                case 1: //Sčítání
+        Float druhyOperand;
+        Double ans = 0d;
+        switch(operation)
+        {
+            case 1: //Scitani
                 if(!vysledek.getText().isEmpty()){
                     druhyOperand = Float.parseFloat(vysledek.getText());
                     ans = MathLib.scitani(data, druhyOperand);
@@ -405,7 +421,7 @@ public class FXMLDocumentController implements Initializable {
                     }
                 }
                 break;
-            case 2: //Odčítání
+            case 2: //Odcitani
                 if(!vysledek.getText().isEmpty()){
                     druhyOperand = Float.parseFloat(vysledek.getText());
                     ans = MathLib.odcitani(data, druhyOperand);
@@ -418,7 +434,7 @@ public class FXMLDocumentController implements Initializable {
                     }
                 }
                 break;
-            case 3: //Násobení
+            case 3: //Nasobeni
                 if(!vysledek.getText().isEmpty()){
                     druhyOperand = Float.parseFloat(vysledek.getText());
                     ans = MathLib.nasobeni(data, druhyOperand);
@@ -431,7 +447,7 @@ public class FXMLDocumentController implements Initializable {
                     }
                 }
                 break;
-            case 4: //Dělení
+            case 4: //Deleni
                 if(!vysledek.getText().isEmpty()){
                     try{
                         druhyOperand = Float.parseFloat(vysledek.getText());
@@ -513,13 +529,12 @@ public class FXMLDocumentController implements Initializable {
                 break;
             }
             operation = -1;
-            textDopredu = false;
             if(vypocet.getText().contains(".")){
                 destecka = true;
             }else{
                 destecka = false;
             }
-        } //if(!vypocet.getText().isEmpty())
+        }//if(!vypocet.getText().isEmpty())
     }
     }// void handleButtonAction(ActionEvent event){}
     

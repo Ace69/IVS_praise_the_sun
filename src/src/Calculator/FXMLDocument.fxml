@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -7,30 +8,101 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="381.0" prefWidth="359.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Calculator.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="381.0" prefWidth="359.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Calculator.FXMLDocumentController">
   <children>
-    <Button id="" fx:id="jedna" layoutX="112.0" layoutY="89.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="1" />
-    <Button id="" fx:id="dva" layoutX="168.0" layoutY="89.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="2" />
-    <Button id="" fx:id="tri" layoutX="224.0" layoutY="89.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="3" />
-    <Button id="" fx:id="ctyri" layoutX="112.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="4" />
-    <Button id="" fx:id="pet" layoutX="168.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="5" />
-    <Button id="" fx:id="sest" layoutX="224.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="6" />
-    <Button id="" fx:id="sedm" layoutX="112.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="7" />
-    <Button id="" fx:id="osm" layoutX="168.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="8" />
-    <Button id="" fx:id="devet" layoutX="224.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="9" />
-    <Button id="" fx:id="nula" layoutX="112.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="0" />
-    <Button id="" fx:id="smazat" layoutX="224.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="CL" textOverrun="ELLIPSIS" />
-    <Button id="" fx:id="mocnina" layoutX="25.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="x^y" />
-    <Button id="" fx:id="faktorial" layoutX="25.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="!" />
-    <Button id="" fx:id="krat" layoutX="280.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="*" />
-    <Button id="" fx:id="minus" layoutX="280.0" layoutY="89.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="-" />
-    <Button id="" fx:id="plus" layoutX="280.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="+" />
-    <Button id="" fx:id="deleno" layoutX="280.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="/" />
-    <Button id="" fx:id="odmocnina" layoutX="25.0" layoutY="89.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="√" />
-    <Button id="" fx:id="modulo" layoutX="25.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="\%" />
+    <Button id="" fx:id="jedna" alignment="CENTER" layoutX="112.0" layoutY="89.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="1" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="dva" alignment="CENTER" layoutX="168.0" layoutY="89.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="2" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="tri" alignment="CENTER" layoutX="224.0" layoutY="89.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="3" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="ctyri" alignment="CENTER" layoutX="112.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="4" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="pet" alignment="CENTER" layoutX="168.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="5" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="sest" alignment="CENTER" layoutX="224.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="6" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="sedm" alignment="CENTER" layoutX="112.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="7" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="osm" alignment="CENTER" layoutX="168.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="8" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="devet" alignment="CENTER" layoutX="224.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="9" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="nula" alignment="CENTER" layoutX="112.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="0" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="smazat" alignment="CENTER" layoutX="224.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="CL" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="mocnina" alignment="CENTER" layoutX="25.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="x^y" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="faktorial" alignment="CENTER" layoutX="25.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="!" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="krat" alignment="CENTER" layoutX="280.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="*" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="minus" alignment="CENTER" layoutX="280.0" layoutY="89.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="-" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="plus" alignment="CENTER" layoutX="280.0" layoutY="145.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="+" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="deleno" alignment="CENTER" layoutX="280.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="/" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="odmocnina" alignment="CENTER" layoutX="25.0" layoutY="89.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="√" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="modulo" alignment="CENTER" layoutX="25.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="\%" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
     <TextField id="" fx:id="vypocet" alignment="CENTER_RIGHT" editable="false" layoutX="25.0" layoutY="10.0" prefHeight="30.0" prefWidth="311.0" text="" />
     <TextField id="" fx:id="vysledek" alignment="CENTER_RIGHT" editable="false" layoutX="25.0" layoutY="40.0" prefHeight="30.0" prefWidth="311.0" text="" />
-    <Button id="" fx:id="cara" layoutX="168.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="." />
-    <Button id="" fx:id="rovno" layoutX="112.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="224.0" text="=" />
+    <Button id="" fx:id="cara" alignment="CENTER" layoutX="168.0" layoutY="257.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="." textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+    <Button id="" fx:id="rovno" alignment="CENTER" layoutX="112.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="224.0" text="=" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <Button id="" fx:id="help" alignment="CENTER" layoutX="25.0" layoutY="313.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="56.0" prefWidth="56.0" text="?" textOverrun="CLIP">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
   </children>
+   <effect>
+      <DropShadow color="#4a010154" />
+   </effect>
 </AnchorPane>
