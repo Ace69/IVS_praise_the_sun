@@ -30,7 +30,7 @@ import javafx.stage.Stage;
 
 /**
  * @brief Třída spouštící kalkulačku.
- * @author František Policat (xpolic04)
+ * @author František Policar (xpolic04)
  * @date 15.4.2018
  * @version 1.0
  */

@@ -1,7 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/************************************************************************
+* Název projektu: Kalkulačka                                            *
+* Balíček: Calculator                                                   *
+* Soubor: FXMLDocumentController.java                                   *
+* Datum: 15.4.2018                                                      *
+* Autoři: David Bulawa (xbulaw01)                                       *
+*         František Policar (xpolic04)                                  *
+*                                                                       *
+* Popis: Funkce GUI kalkulačky                                          *
+*                                                                       *
+************************************************************************/
+
+/**
+ * @file FXMLDocumentController.java 
+ * 
+ * @brief Funkce GUI kalkulačky kalkulačky
+ */
+
+/**
+ * @package Calculator
+ * 
+ * @brief GUI a funkce kalkulačky
  */
 package Calculator;
 
@@ -12,9 +30,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import static java.lang.Math.random;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
@@ -22,99 +38,164 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 /**
- * @todo Faktorial omezit na 1 argument
- * @author fpolicar
+ * @brief Třída zabývající se funkcionalitou kalkulačky.
+ * @author David Bulawa (xbulaw01)
+ * @author František Policar (xpolic04)
+ * @date 15.4.2018
+ * @version 1.0
  */
 public class FXMLDocumentController implements Initializable {
     
-    Double data;
-    int operation = -1;
-    boolean destecka = false; //nastavi true pokud uz byla zadana des. tecka
-    boolean textDopredu = false; //pokud je true, zapisuje text vypoctu dopredu 
-    String cislo;
-    Alert alert = new Alert(AlertType.ERROR, "File already exists. Do you want to override?");
-    int pocitadloMinus;
-    DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.ENGLISH);
-    DecimalFormat df = new DecimalFormat("#############.####",formatSymbols);
+    Double data; /**<@brief Zadané číslo */
+    int operation = -1; /**@brief Početní operace která se bude provádět */
+    boolean destecka = false; /**<@brief Nastaví true pokud už byla zadána des. tečka */
+    boolean textDopredu = false; /**<@brief Pokud je true, zapisuje text výpočtu dopředu */ 
+    Alert alert = new Alert(AlertType.ERROR, "File already exists. Do you want to override?"); /**<@brief Výpis chybové hlášky  */
+    DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.ENGLISH); /**<@brief Přepnutí na desetinnou tečku */
+    DecimalFormat df = new DecimalFormat("#############.####",formatSymbols); /**<@brief Upřesnění formátu čísel */
     
-    @FXML
-    private Button button;
-    
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
+    /**
+     * @brief Tlačítko pro desetinnou čárku
+     */
     @FXML
     private Button cara;
-
+    
+    /**
+     * @brief Tlačítko čísla 4
+     */
     @FXML
     private Button ctyri;
-
+    
+    /**
+     * @brief Tlačítko operace děleno
+     */
     @FXML
     private Button deleno;
-
+    
+    /**
+     * @brief Tlačítko čísla 9
+     */
     @FXML
     private Button devet;
-
+    
+    /**
+     * @brief Tlačítko čísla 2
+     */
     @FXML
     private Button dva;
-
+    
+    /**
+     * @brief Tlačítko pro faktoriál
+     */
     @FXML
     private Button faktorial;
-
+    
+    /**
+     * @brief Tlačítko čísla 1
+     */
     @FXML
     private Button jedna;
-
+    
+    /**
+     * 
+     */
     @FXML
     private Button krat;
-
+    
+    /**
+     * @brief Tlačítko operace odčítání
+     */
     @FXML
     private Button minus;
-
+    
+    /**
+     * @brief Tlačítko operace mocnina
+     */
     @FXML
     private Button mocnina;
-
+    
+    /**
+     * @brief Tlačítko operace modulo
+     */
     @FXML
     private Button modulo;
-
+    
+    /**
+     * @brief Tlačítko čísla 0
+     */
     @FXML
     private Button nula;
-
+    
+    /**
+     * @brief Tlačítko operace odmocnina
+     */
     @FXML
     private Button odmocnina;
-
+    
+    /**
+     * @brief Tlačítko čísla 8
+     */
     @FXML
     private Button osm;
-
+    
+    /**
+     * @brief Tlačítko čísla 5
+     */
     @FXML
     private Button pet;
-
+    
+    /**
+     * @brief Tlačítko operace sčítání
+     */
     @FXML
     private Button plus;
-
+    
+    /**
+     * @brief Tlačítko pro výpočet zadané operace
+     */
     @FXML
     private Button rovno;
-
+    
+    /**
+     * @brief Tlačítko čísla 7
+     */
     @FXML
     private Button sedm;
-
+    
+    /**
+     * @brief Tlačítko čísla 6
+     */
     @FXML
     private Button sest;
-
+    
+    /**
+     * @brief Tlačítko pro smazání zadávaných čísel
+     */
     @FXML
     private Button smazat;
-
+    
+    /**
+     * @brief Tlačítko čísla 3
+     */
     @FXML
     private Button tri;
-
+    
+    /**
+     * @brief Spodní textové pole zobrazující výsledek
+     */
     @FXML
     private TextField vysledek;
+    
+    /**
+     * @brief Horní textové pole zobrazující mezivýpočet
+     */
     @FXML
     private TextField vypocet;
 
-    //Cisla 
+    /**
+     * @brief Akce které se provedou při stisknutí tlačítka
+     * @param event Prováděná akce (kliknutí)
+     */
     @FXML
     void handleButtonAction(ActionEvent event) {
     if(event.getSource() == jedna)
@@ -215,7 +296,7 @@ public class FXMLDocumentController implements Initializable {
             destecka = true;
         }
     }
-    //Mazani
+    //Mazání
     else if(event.getSource() == smazat)
     {
         vysledek.setText("");
@@ -224,11 +305,11 @@ public class FXMLDocumentController implements Initializable {
         operation = -1;
     }
 
-    //Pocetni operace
+    //Početní operace
     else if(event.getSource() == plus && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
-        operation = 1; //Scitani
+        operation = 1; //Sčítání
         vysledek.setText("");
         vypocet.setText(vypocet.getText() + "+");
         destecka = false;
@@ -240,7 +321,7 @@ public class FXMLDocumentController implements Initializable {
             vypocet.setText(vypocet.getText() + "-");
         }else if(!vysledek.getText().matches("-")){
             data = Double.parseDouble(vysledek.getText());
-            operation = 2; //Odcitni
+            operation = 2; //Odčítání
             vysledek.setText("");
             vypocet.setText(vypocet.getText() + "-");
             destecka = false;
@@ -249,7 +330,7 @@ public class FXMLDocumentController implements Initializable {
     else if(event.getSource() == krat && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
-        operation = 3; //Nasobeni
+        operation = 3; //Násobení
         vysledek.setText("");
         vypocet.setText(vypocet.getText() + "*");
         destecka = false;
@@ -257,7 +338,7 @@ public class FXMLDocumentController implements Initializable {
     else if(event.getSource() == deleno && operation == -1 && !vysledek.getText().isEmpty())
     {
         data = Double.parseDouble(vysledek.getText());
-        operation = 4; //Deleni
+        operation = 4; //Dělení
         vysledek.setText("");
         vypocet.setText(vypocet.getText() + "/");
         destecka = false;
@@ -306,16 +387,12 @@ public class FXMLDocumentController implements Initializable {
             vypocet.setText("");
             alert.showAndWait();
         }
-    }
-    
-    else if(event.getSource() == rovno)
-    {
+    } else if(event.getSource() == rovno){
         if(!vypocet.getText().isEmpty()){
-        Float druhyOperand;
-        Double ans = 0d;
-        switch(operation)
-        {
-            case 1: //Scitani
+            Float druhyOperand;
+            Double ans = 0d;
+            switch(operation){
+                case 1: //Sčítání
                 if(!vysledek.getText().isEmpty()){
                     druhyOperand = Float.parseFloat(vysledek.getText());
                     ans = MathLib.scitani(data, druhyOperand);
@@ -328,7 +405,7 @@ public class FXMLDocumentController implements Initializable {
                     }
                 }
                 break;
-            case 2: //Odcitani
+            case 2: //Odčítání
                 if(!vysledek.getText().isEmpty()){
                     druhyOperand = Float.parseFloat(vysledek.getText());
                     ans = MathLib.odcitani(data, druhyOperand);
@@ -341,7 +418,7 @@ public class FXMLDocumentController implements Initializable {
                     }
                 }
                 break;
-            case 3: //Nasobeni
+            case 3: //Násobení
                 if(!vysledek.getText().isEmpty()){
                     druhyOperand = Float.parseFloat(vysledek.getText());
                     ans = MathLib.nasobeni(data, druhyOperand);
@@ -354,7 +431,7 @@ public class FXMLDocumentController implements Initializable {
                     }
                 }
                 break;
-            case 4: //Deleni
+            case 4: //Dělení
                 if(!vysledek.getText().isEmpty()){
                     try{
                         druhyOperand = Float.parseFloat(vysledek.getText());
@@ -434,24 +511,21 @@ public class FXMLDocumentController implements Initializable {
                     }
                 }
                 break;
-        }
-        operation = -1;
-        textDopredu = false;
-        if(vypocet.getText().contains(".")){
-            destecka = true;
-        }else{
-            destecka = false;
-        }
-        }
-    }else{
-        //vysledek.setText("Nebylo nic zadano");
+            }
+            operation = -1;
+            textDopredu = false;
+            if(vypocet.getText().contains(".")){
+                destecka = true;
+            }else{
+                destecka = false;
+            }
+        } //if(!vypocet.getText().isEmpty())
     }
-    
-    }
+    }// void handleButtonAction(ActionEvent event){}
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
     
-}
+} // public class FXMLDocumentController
