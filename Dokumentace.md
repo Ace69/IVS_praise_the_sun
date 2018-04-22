@@ -1,11 +1,17 @@
 ﻿# Instalace produktu
 Produkt je možné nainstalovat spuštěním souboru "Kalkulačka_setup". Následně by měla proběhnout kontrola administrátorského oprávnění. Dále je uživatel vyzván k
 vybrání jazyka, ve kterém instalace bude probíhat. Poklepáním na tlačítko další má uživatel možnost si vybrat, kam se bude program instalovat. Defaultně je vybrána cesta
-"C:\Program Files", kde si instalační program automaticky vytvoří složku s daným jménem. V možnostech nechybí volba vlastního nastavení adresáře, kam se program bude instalovat.
+"C:\Program Files (x86)", kde si instalační program automaticky vytvoří složku s daným jménem. V možnostech nechybí volba vlastního nastavení adresáře, kam se program bude instalovat.
 Společně s volbou adresáře je uživatel informován, kolik místa na disku program zabere. V dalších krocích je uživatel dotázán, zdali chce vytvořit zástupce v nabídce Start a na ploše.
 Ještě před samotnou instalací má uživatel možnost vidět shrnutí, co vše se při instalaci vytvoří. v případě jiného rozhodnutí má samozřejmě možnost se vrátit poklepáním na tlačítko "Zpět"
 a svoji volbu změnit. Kliknutím na tlačítko "Instalovat" se provede instalace. Ještě před samotným dokončením instalace je uživateli zobrazeno pár užitečných informací o produktu a zároveň
-je dotázán, zda-li chce produkt ihned po instalaci spustit.
+je dotázán, zdali chce produkt ihned po instalaci spustit.
+
+## Problémy se spuštěním
+Pokud na svém počítači nemáte nainstálováno JRE(Java Runtime Enviroment), aplikaci pravděpodobně nebude možné spustit. V takovém případě při pokusu o spuštění kalkulačky vyskočí chybová hláška
+"Na počítači chybí Java Runtime Enviroment" a následně se otevře okno internetového prohlížeče, které Vás automaticky přesměruje na stránku, kde je možno toto rozšíření stáhnout. V případě, že
+se toto okno neotevře, přejděte prosím na stránku "https://java.com/en/download/windows-64bit.jsp" a klikněte na "Agree and Start Free Download". Následně by se mělo spustit stahování rozšíření.
+Po dokončení stahování rozšíření spusťte a nainstalujte. Poté, co instalaci dokončíte, program kalkulačka by měl bez problému běžet.
 
 # Odinstalace produktu přes odinstalátor
 Přejděme do složky s nainstalovaným produktem, zde by se měl nacházet soubor "unins000.exe". Následně jsme dotázáni, zdali produkt chceme opravdu odinstalovat. V případě kladné odpovědi klikneme
