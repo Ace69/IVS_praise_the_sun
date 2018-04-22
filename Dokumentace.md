@@ -11,7 +11,10 @@ je dotázán, zdali chce produkt ihned po instalaci spustit.
 Pokud na svém počítači nemáte nainstálováno JRE(Java Runtime Enviroment), aplikaci pravděpodobně nebude možné spustit. V takovém případě při pokusu o spuštění kalkulačky vyskočí chybová hláška
 "Na počítači chybí Java Runtime Enviroment" a následně se otevře okno internetového prohlížeče, které Vás automaticky přesměruje na stránku, kde je možno toto rozšíření stáhnout. V případě, že
 se toto okno neotevře, přejděte prosím na stránku "https://java.com/en/download/windows-64bit.jsp" a klikněte na "Agree and Start Free Download". Následně by se mělo spustit stahování rozšíření.
-Po dokončení stahování rozšíření spusťte a nainstalujte. Poté, co instalaci dokončíte, program kalkulačka by měl bez problému běžet.
+
+## Instalace Java SE Runtime Enviroment
+Po úspěšném stažení a následném spuštění JRE(jre-8u171-windows-x64.exe) klikněte na "Install". Následně bude provedena instalace, což může chvíli trvat. Po dokončení instalace se zobrazí okno, které
+Vás bude informovat o úspěšném dokončení instalace. Kliknutím na "Close" okno zavřete. Nyní už můžete začít využívat program Kalkulačka.
 
 # Odinstalace produktu přes odinstalátor
 Přejděme do složky s nainstalovaným produktem, zde by se měl nacházet soubor "unins000.exe". Následně jsme dotázáni, zdali produkt chceme opravdu odinstalovat. V případě kladné odpovědi klikneme
