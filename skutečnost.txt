@@ -1,0 +1,16 @@
+Komunikaèní kanál:
+V prùbìhu vypracovávání projektu jsme došli k závìru, že dva komunikaèní kanály jsou zbyteèné, proto jsme Telegram pøestali používat. Naším hlavním zprostøedkovatelem komunikace v
+ týmu byl tedy pouze Messenger, se kterým byli všichni èlenové týmu spokojení.
+
+Rozdìlení úkolù
+Pøi rozdìlování úkolù na zaèátku jsme nevìdìli, co vše bude daná èinnost obnášet, proto jsme v prùbìhu vytváøení projektu rozdìlení úkolù mírnì pøedìlali.
+U nìkterých èinností (Tvorba instalátoru) nebylo zapotøebí, aby na nich pracovalo více lidí, což se ukázalo až v prùbìhu vývoje software. Naopak napø. u tvoøení Makefilu bylo zapotøebí
+více lidí.
+
+Termíny
+Dodržování termínu se nám docela daøilo. Ovšem ve vytvoøených souèástích programu jsme postupem èasu nalezli drobné chyby, které bylo nutno opravit, a tak se nìjaké termíny kvùli drobnostem protáhly.
+
+Použité nástroje
+Používané nástroje jsme dodrželi všichni; tj. NetBeans pro vývoj aplikace a git pro správu verzí.
+
+
