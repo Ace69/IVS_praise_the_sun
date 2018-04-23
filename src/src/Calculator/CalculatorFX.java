@@ -1,24 +1,24 @@
 /************************************************************************
-* NÃ¡zev projektu: KalkulaÄka                                            *
-* BalÃ­Äek: Calculator                                                   *
+* Název projektu: Kalkulaèka                                            *
+* Balíèek: Calculator                                                   *
 * Soubor: CalculatorFX.java                                             *
 * Datum: 15.4.2018                                                      *
-* Autor: FrantiÅ¡ek Policar (xpolic04)                                   *
+* Autor: František Policar (xpolic04)                                   *
 *                                                                       *
-* Popis: SpouÅ¡tÄ›nÃ­ kalkulaÄky                                           *
+* Popis: Spouštìní kalkulaèky                                           *
 *                                                                       *
 ************************************************************************/
 
 /**
  * @file CalculatorFX.java 
  * 
- * @brief SpouÅ¡tÄ›nÃ­ kalkulaÄky
+ * @brief Spouštìní kalkulaèky
  */
 
 /**
  * @package Calculator
  * 
- * @brief GUI a funkce kalkulaÄky
+ * @brief GUI a funkce kalkulaèky
  */
 package Calculator;
 
@@ -29,16 +29,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * @brief TÅ™Ã­da spouÅ¡tÃ­cÃ­ kalkulaÄku.
- * @author FrantiÅ¡ek Policar (xpolic04)
+ * @brief Tøída spouštící kalkulaèku.
+ * @author František Policar (xpolic04)
  * @date 15.4.2018
  * @version 1.0
  */
 public class CalculatorFX extends Application {
     
     /**
-     * @brief VytvoÅ™enÃ­ okna aplikace.
-     * @param stage TÄ›lo aplikace
+     * @brief Vytvoøení okna aplikace.
+     * @param stage Tìlo aplikace
      * @throws Exception 
      */
     @Override
@@ -47,14 +47,14 @@ public class CalculatorFX extends Application {
         
         Scene scene = new Scene(root);
         
-        stage.setTitle("KalkulaÄka v1.0");
+        stage.setTitle("Kalkulaèka v1.0");
         stage.setScene(scene);
         stage.show();
     }
 
     /**
-     * @Brief SpouÅ¡tÃ­ celou aplikaci.
-     * @param args Argumenty pÅ™Ã­kazovÃ© Å™Ã¡dky
+     * @Brief Spouští celou aplikaci.
+     * @param args Argumenty pøíkazové øádky
      */
     public static void main(String[] args) {
         launch(args);

@@ -1,26 +1,25 @@
-
 /************************************************************************
-* N√°zev projektu: Kalkulaƒçka                                            *
-* Bal√≠ƒçek: Calculator                                                   *
+* N·zev projektu: KalkulaËka                                            *
+* BalÌËek: Calculator                                                   *
 * Soubor: FXMLDocumentController.java                                   *
 * Datum: 15.4.2018                                                      *
-* Auto≈ôi: David Bulawa (xbulaw01)                                       *
-*         Franti≈°ek Policar (xpolic04)                                  *
+* Auto¯i: David Bulawa (xbulaw01)                                       *
+*         Frantiöek Policar (xpolic04)                                  *
 *                                                                       *
-* Popis: Funkce GUI kalkulaƒçky                                          *
+* Popis: Funkce GUI kalkulaËky                                          *
 *                                                                       *
 ************************************************************************/
 
 /**
  * @file FXMLDocumentController.java 
  * 
- * @brief Funkce GUI kalkulaƒçky kalkulaƒçky
+ * @brief Funkce GUI kalkulaËky kalkulaËky
  */
 
 /**
  * @package Calculator
  * 
- * @brief GUI a funkce kalkulaƒçky
+ * @brief GUI a funkce kalkulaËky
  */
 
 package Calculator;
@@ -42,167 +41,167 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 /**
- * @brief T≈ô√≠da zab√Ωvaj√≠c√≠ se funkcionalitou kalkulaƒçky.
+ * @brief T¯Ìda zab˝vajÌcÌ se funkcionalitou kalkulaËky.
  * @author David Bulawa (xbulaw01)
- * @author Franti≈°ek Policar (xpolic04)
+ * @author Frantiöek Policar (xpolic04)
  * @date 15.4.2018
  * @version 1.0
  */
 public class FXMLDocumentController implements Initializable {
-    Double data; /**<@brief Zadan√© ƒç√≠slo */
-    int operation = -1; /**<@brief Poƒçetn√≠ operace kter√° se bude prov√°dƒõt */
-    boolean destecka = false; /**<@brief Nastav√≠ true pokud u≈æ byla zad√°na des. teƒçka */
-    Alert alert = new Alert(AlertType.ERROR, ""); /**<@brief V√Ωpis chybov√© hl√°≈°ky  */
-    DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.ENGLISH); /**<@brief P≈ôepnut√≠ na desetinnou teƒçku */
-    DecimalFormat df = new DecimalFormat("#############.####",formatSymbols); /**<@brief Up≈ôesnƒõn√≠ form√°tu ƒç√≠sel */
-    Alert helpAlert = new Alert(AlertType.INFORMATION, "Napovƒõda"); /**<@Vyskakovaci okno na n√°povƒõdu */
+    Double data; /**<@brief ZadanÈ ËÌslo */
+    int operation = -1; /**<@brief PoËetnÌ operace kter· se bude prov·dÏt */
+    boolean destecka = false; /**<@brief NastavÌ true pokud uû byla zad·na des. teËka */
+    Alert alert = new Alert(AlertType.ERROR, ""); /**<@brief V˝pis chybovÈ hl·öky  */
+    DecimalFormatSymbols formatSymbols = new DecimalFormatSymbols(Locale.ENGLISH); /**<@brief P¯epnutÌ na desetinnou teËku */
+    DecimalFormat df = new DecimalFormat("#############.####",formatSymbols); /**<@brief Up¯esnÏnÌ form·tu ËÌsel */
+    Alert helpAlert = new Alert(AlertType.INFORMATION, "NapovÏda"); /**<@Vyskakovaci okno na n·povÏdu */
     
     /**
-     * @brief Tlaƒç√≠tko pro desetinnou ƒç√°rku
+     * @brief TlaËÌtko pro desetinnou Ë·rku
      */
     @FXML
     private Button cara;
     
     /**
-     * @brief Tlaƒç√≠tko ƒç√≠sla 4
+     * @brief TlaËÌtko ËÌsla 4
      */
     @FXML
     private Button ctyri;
     
     /**
-     * @brief Tlaƒç√≠tko operace dƒõleno
+     * @brief TlaËÌtko operace dÏleno
      */
     @FXML
     private Button deleno;
     
     /**
-     * @brief Tlaƒç√≠tko ƒç√≠sla 9
+     * @brief TlaËÌtko ËÌsla 9
      */
     @FXML
     private Button devet;
     
     /**
-     * @brief Tlaƒç√≠tko ƒç√≠sla 2
+     * @brief TlaËÌtko ËÌsla 2
      */
     @FXML
     private Button dva;
     
     /**
-     * @brief Tlaƒç√≠tko pro faktori√°l
+     * @brief TlaËÌtko pro faktori·l
      */
     @FXML
     private Button faktorial;
     
     /**
-     * @brief Tlaƒç√≠tko ƒç√≠sla 1
+     * @brief TlaËÌtko ËÌsla 1
      */
     @FXML
     private Button jedna;
     
     /**
-     * Tlaƒç√≠tko operace n√°soben√≠
+     * TlaËÌtko operace n·sobenÌ
      */
     @FXML
     private Button krat;
     
     /**
-     * @brief Tlaƒç√≠tko operace odƒç√≠t√°n√≠
+     * @brief TlaËÌtko operace odËÌt·nÌ
      */
     @FXML
     private Button minus;
     
     /**
-     * @brief Tlaƒç√≠tko operace mocnina
+     * @brief TlaËÌtko operace mocnina
      */
     @FXML
     private Button mocnina;
     
     /**
-     * @brief Tlaƒç√≠tko operace modulo
+     * @brief TlaËÌtko operace modulo
      */
     @FXML
     private Button modulo;
     
     /**
-     * @brief Tlaƒç√≠tko ƒç√≠sla 0
+     * @brief TlaËÌtko ËÌsla 0
      */
     @FXML
     private Button nula;
     
     /**
-     * @brief Tlaƒç√≠tko operace odmocnina
+     * @brief TlaËÌtko operace odmocnina
      */
     @FXML
     private Button odmocnina;
     
     /**
-     * @brief Tlaƒç√≠tko ƒç√≠sla 8
+     * @brief TlaËÌtko ËÌsla 8
      */
     @FXML
     private Button osm;
     
     /**
-     * @brief Tlaƒç√≠tko ƒç√≠sla 5
+     * @brief TlaËÌtko ËÌsla 5
      */
     @FXML
     private Button pet;
     
     /**
-     * @brief Tlaƒç√≠tko operace sƒç√≠t√°n√≠
+     * @brief TlaËÌtko operace sËÌt·nÌ
      */
     @FXML
     private Button plus;
     
     /**
-     * @brief Tlaƒç√≠tko pro v√Ωpoƒçet zadan√© operace
+     * @brief TlaËÌtko pro v˝poËet zadanÈ operace
      */
     @FXML
     private Button rovno;
     
     /**
-     * @brief Tlaƒç√≠tko ƒç√≠sla 7
+     * @brief TlaËÌtko ËÌsla 7
      */
     @FXML
     private Button sedm;
     
     /**
-     * @brief Tlaƒç√≠tko ƒç√≠sla 6
+     * @brief TlaËÌtko ËÌsla 6
      */
     @FXML
     private Button sest;
     
     /**
-     * @brief Tlaƒç√≠tko pro smaz√°n√≠ zad√°van√Ωch ƒç√≠sel
+     * @brief TlaËÌtko pro smaz·nÌ zad·van˝ch ËÌsel
      */
     @FXML
     private Button smazat;
     
     /**
-     * @brief Tlaƒç√≠tko ƒç√≠sla 3
+     * @brief TlaËÌtko ËÌsla 3
      */
     @FXML
     private Button tri;
     
     /**
-     * @brief Tlaƒç√≠tko pro n√°povƒõdu
+     * @brief TlaËÌtko pro n·povÏdu
      */
     @FXML
     private Button help;
     /**
-     * @brief Spodn√≠ textov√© pole zobrazuj√≠c√≠ v√Ωsledek
+     * @brief SpodnÌ textovÈ pole zobrazujÌcÌ v˝sledek
      */
     @FXML
     private TextField vysledek;
     
     /**
-     * @brief Horn√≠ textov√© pole zobrazuj√≠c√≠ meziv√Ωpoƒçet
+     * @brief HornÌ textovÈ pole zobrazujÌcÌ meziv˝poËet
      */
     @FXML
     private TextField vypocet;
 
     /**
-     * @brief Akce kter√© se provedou p≈ôi stisknut√≠ tlaƒç√≠tka
-     * @param event Prov√°dƒõn√° akce (kliknut√≠)
+     * @brief Akce kterÈ se provedou p¯i stisknutÌ tlaËÌtka
+     * @param event Prov·dÏn· akce (kliknutÌ)
      */
     @FXML
     void handleButtonAction(ActionEvent event) {
@@ -275,46 +274,46 @@ public class FXMLDocumentController implements Initializable {
     }
     else if(event.getSource() == help){
         helpAlert.setContentText(
-"Program Calculator je mo≈æn√© pou≈æ√≠vat na jednoduch√© v√Ωpoƒçty, \n" +
-"jako je sƒç√≠t√°n√≠, odƒç√≠t√°n√≠, n√°soben√≠, dƒõlen√≠, odmocnina, mocnina, faktori√°l a modulo. \n" +
+"Program Calculator je moûnÈ pouûÌvat na jednoduchÈ v˝poËty, \n" +
+"jako je sËÌt·nÌ, odËÌt·nÌ, n·sobenÌ, dÏlenÌ, odmocnina, mocnina, faktori·l a modulo. \n" +
 "\n" +
-"Pro v√Ωbƒõr ƒç√≠sel a oper√°tor≈Ø pou≈æ√≠v√°me lev√© talƒç√≠tko my≈°i. \n" +
-"Na v√Ωsledek a v√Ωpoƒçty n√°m slou≈æ√≠ dvƒõ textov√© pole ve vrchn√≠ ƒç√°sti kalkulaƒçky. \n" +
+"Pro v˝bÏr ËÌsel a oper·tor˘ pouûÌv·me levÈ talËÌtko myöi. \n" +
+"Na v˝sledek a v˝poËty n·m slouûÌ dvÏ textovÈ pole ve vrchnÌ Ë·sti kalkulaËky. \n" +
 "\n" +
-"1. Sƒç√≠t√°n√≠ \n" +
-"Zad√°me prvn√≠ ƒç√≠slo, pot√© vybereme oper√°tor \"+\" a zad√°me druh√© ƒç√≠slo. \n" +
-"P≈ô: 4+4=8\n" +
+"1. SËÌt·nÌ \n" +
+"Zad·me prvnÌ ËÌslo, potÈ vybereme oper·tor \"+\" a zad·me druhÈ ËÌslo. \n" +
+"P¯: 4+4=8\n" +
 "\n" +
-"2. Odƒç√≠t√°n√≠ \n" +
-"Zad√°me prvn√≠ ƒç√≠slo, pot√© vybereme oper√°tor \"-\" a zad√°me druh√© ƒç√≠slo.\n" +
-"P≈ô: 8-4=4\n" +
+"2. OdËÌt·nÌ \n" +
+"Zad·me prvnÌ ËÌslo, potÈ vybereme oper·tor \"-\" a zad·me druhÈ ËÌslo.\n" +
+"P¯: 8-4=4\n" +
 "\n" +
-"3. N√°soben√≠\n" +
-"Zad√°me prvn√≠ ƒç√≠slo, pot√© vybereme oper√°tor \"*\" a zad√°me druh√© ƒç√≠slo.\n" +
-"P≈ô: 4*4=16\n" +
+"3. N·sobenÌ\n" +
+"Zad·me prvnÌ ËÌslo, potÈ vybereme oper·tor \"*\" a zad·me druhÈ ËÌslo.\n" +
+"P¯: 4*4=16\n" +
 "\n" +
-"4. Dƒõlen√≠\n" +
-"Zad√°me prvn√≠ ƒç√≠slo, pot√© vybereme oper√°tor \"/\" a zad√°me druh√© ƒç√≠slo.\n" +
-"P≈ô: 8/4=2\n" +
+"4. DÏlenÌ\n" +
+"Zad·me prvnÌ ËÌslo, potÈ vybereme oper·tor \"/\" a zad·me druhÈ ËÌslo.\n" +
+"P¯: 8/4=2\n" +
 "\n" +
 "5. Odmocnina\n" +
-"Zad√°me prvn√≠ ƒç√≠slo, kter√© bude pod odmocninou, pot√© vybereme oper√°tor \"‚àö\" a zad√°me druh√© ƒç√≠slo.\n" +
-"P≈ô: 2‚àö16=4\n" +
+"Zad·me prvnÌ ËÌslo, kterÈ bude pod odmocninou, potÈ vybereme oper·tor znazornujici odmocninu a zad·me druhÈ ËÌslo.\n" +
+"P¯: 16 root 2=4\n" +
 "\n" +
 "6. Mocnina\n" +
-"Zad√°me prvn√≠ ƒç√≠slo, pot√© vybereme oper√°tor \"^\" a zad√°me druh√© ƒç√≠slo.\n" +
-"P≈ô: 4^2=16\n" +
+"Zad·me prvnÌ ËÌslo, potÈ vybereme oper·tor \"^\" a zad·me druhÈ ËÌslo.\n" +
+"P¯: 4^2=16\n" +
 "\n" +
 "7. Faktorial\n" +
-"Zad√°me ƒç√≠slo a vybereme oper√°tor \"!\", po stisku oper√°toru \"=\", vypoƒç√≠t√° faktori√°l zadan√©ho ƒç√≠sla.\n" +
-"P≈ô: 4!=24\n" +
+"Zad·me ËÌslo a vybereme oper·tor \"!\", po stisku oper·toru \"=\", vypoËÌt· faktori·l zadanÈho ËÌsla.\n" +
+"P¯: 4!=24\n" +
 "\n" +
 "8. Modulo\n" +
-"Zad√°me prvn√≠ ƒç√≠slo, pot√© vybereme oper√°tor \"%\" a zad√°me druh√© ƒç√≠slo, v√Ωsledek je zbytek po dƒõlen√≠.\n" +
-"P≈ô: 5%3=2\n" +
+"Zad·me prvnÌ ËÌslo, potÈ vybereme oper·tor \"%\" a zad·me druhÈ ËÌslo, v˝sledek je zbytek po dÏlenÌ.\n" +
+"P¯: 5%3=2\n" +
 "\n" +
-"9. Rovn√° se\n" +
-"Pro v√Ωsledek zad√°v√°me oper√°tor \"=\". \n" +
+"9. Rovn· se\n" +
+"Pro v˝sledek zad·v·me oper·tor \"=\". \n" +
 "");
         helpAlert.showAndWait();
     }
@@ -540,8 +539,8 @@ public class FXMLDocumentController implements Initializable {
     
     /**
      * @brief Inicializace controller
-     * @param url Lokace pro zji≈°tƒõn√≠ relativn√≠ch cest ke ko≈ôenov√©mu objektu
-     * @param rb Zdroje pou≈æ√≠t√© pro nalezen√≠ ko≈ôenov√©ho objektu
+     * @param url Lokace pro zjiötÏnÌ relativnÌch cest ke ko¯enovÈmu objektu
+     * @param rb Zdroje pouûÌtÈ pro nalezenÌ ko¯enovÈho objektu
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
