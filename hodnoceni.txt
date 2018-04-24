@@ -1,0 +1,4 @@
+﻿xbulaw01	100	(GUI, profiling, makefile)
+xdolej09	100 (uživatelská dokumentace, readme, instalátor)
+xpolic04	100	(GUI, mockup)
+xsvera04	100	(matematická knihovna, testy, programová dokumentace)

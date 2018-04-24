@@ -1,0 +1,10 @@
+﻿Profiling naší matematické knihovny jsme provedli na výpočtu výběrové směrodatné odchylky.
+Vstupy byly o velikosti 10, 100 a 1000 hodnot.
+
+Při vstupu 10 čísel bylo nejvíce času stráveno při výpočtu odmocniny.
+Můžeme vidět, že jeden výpočet odmocniny zabral dvojnásobek času jako 11 volání mocniny.
+
+Při větším počtu hodnot se ale nejčastěji volalo sčítání a mocnina. 
+V těchto dvou metodách bylo stráveno mnohonásobně více času.
+
+Jako nejnáročnější se ukázala operace mocnina, tudíž bychom se měli zaměřit na její optimalizaci.
