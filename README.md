@@ -2,7 +2,7 @@
 Kalkulačka obsahuje grafické rozhraní pro základní matematické operace(sčítání, odčítání, násobení, dělení, faktoriál) včetně volitelně přidané funkce pro výpočet modula. Kalkulačka byla vytvořena v jazyce Java za účelem školního projektu.
 
 ## Prostředí 
-Windows 7 64bit
+Windows 64bit
 
 ## Autoři 
 **Praise the sun** <br />
