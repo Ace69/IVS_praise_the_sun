@@ -1,72 +1,72 @@
 /************************************************************************
-* NÃ¡zev projektu: KalkulaÄka                                            *
-* BalÃ­Äek: Lib                                                          *
+* Název projektu: Kalkulaèka                                            *
+* Balíèek: Lib                                                          *
 * Soubor: MathLib.java                                                  *
 * Datum: 7.4.2018                                                       *
-* Autor: TomÃ¡Å¡ SvÄ›rÃ¡k (xsvera04)                                        *
+* Autor: Tomáš Svìrák (xsvera04)                                        *
 *                                                                       *
-* Popis: MatematickÃ¡ knihovna pro kalkulaÄku                            *
+* Popis: Matematická knihovna pro kalkulaèku                            *
 *                                                                       *
 ************************************************************************/
 
 /**
  * @file MathLib.java 
  * 
- * @brief MatematickÃ¡ knihovna pro kalkulaÄku
+ * @brief Matematická knihovna pro kalkulaèku
  */
 
 /**
  * @package Lib
  * 
- * @brief MatematickÃ¡ knihovna
+ * @brief Matematická knihovna
  */
 package Lib;
 
 /**
- * @brief TÅ™Ã­da matematickÃ© knihovny.
- * @author TomÃ¡Å¡ SvÄ›rÃ¡k (xsvera04)
+ * @brief Tøída matematické knihovny.
+ * @author Tomáš Svìrák (xsvera04)
  * @date 7.4.2018
  * @version 1.0
  */
 public class MathLib {
     
     /**
-     * @brief Metoda seÄte dvÄ› ÄÃ­sla.
-     * @param cislo1 PrvnÃ­ sÄÃ­tanec
-     * @param cislo2 DruhÃ½ sÄÃ­tanec
-     * @return VracÃ­ souÄet ÄÃ­sel
+     * @brief Metoda seète dvì èísla.
+     * @param cislo1 První sèítanec
+     * @param cislo2 Druhı sèítanec
+     * @return Vrací souèet èísel
      */
     public static double scitani(double cislo1, double cislo2){
         return cislo1 + cislo2;
     }
     
     /**
-     * @brief Metoda odeÄte dvÄ› ÄÃ­sla.
-     * @param cislo1 MenÅ¡enec
-     * @param cislo2 MenÅ¡itel
-     * @return VracÃ­ rozdÃ­l ÄÃ­sel
+     * @brief Metoda odeète dvì èísla.
+     * @param cislo1 Menšenec
+     * @param cislo2 Menšitel
+     * @return Vrací rozdíl èísel
      */
     public static double odcitani(double cislo1, double cislo2){
         return cislo1 - cislo2;
     }
     
     /**
-     * @brief Metoda vynÃ¡sobÃ­ dvÄ› ÄÃ­sla.
-     * @param cislo1 PrvnÃ­ Äinitel
-     * @param cislo2 DruhÃ½ Äinitel
-     * @return VracÃ­ souÄin ÄÃ­sel
+     * @brief Metoda vynásobí dvì èísla.
+     * @param cislo1 První èinitel
+     * @param cislo2 Druhı èinitel
+     * @return Vrací souèin èísel
      */
     public static double nasobeni(double cislo1, double cislo2){
         return cislo1 * cislo2;
     }
     
     /**
-     * @brief Metoda vydÄ›lÃ­ dvÄ› ÄÃ­sla.
-     * @param delenec ÄŒÃ­slo kterÃ© chceme dÄ›lit
-     * @param delitel ÄŒÃ­slo kterÃ½m dÄ›lÃ­me
+     * @brief Metoda vydìlí dvì èísla.
+     * @param delenec Èíslo které chceme dìlit
+     * @param delitel Èíslo kterım dìlíme
      * @pre delitel != 0
-     * @throw ArithmeticExcpetion - pokud dÄ›litel = 0
-     * @return VracÃ­ podÃ­l ÄÃ­sel
+     * @throw ArithmeticExcpetion - pokud dìlitel = 0
+     * @return Vrací podíl èísel
      */
     public static double deleni(double delenec, double delitel){
         if(delitel == 0){
@@ -76,11 +76,11 @@ public class MathLib {
     }
     
     /**
-     * @brief Metoda vypoÄÃ­tÃ¡ faktoriÃ¡l zadanÃ©ho ÄÃ­sla.
-     * @param cislo ÄŒÃ­slo ze kterÃ©ho chceme jeho faktoriÃ¡l.
+     * @brief Metoda vypoèítá faktoriál zadaného èísla.
+     * @param cislo Èíslo ze kterého chceme jeho faktoriál.
      * @pre cislo >= 0
-     * @throw IllegalArgumentException - pokud je zadanÃ© ÄÃ­slo zÃ¡pornÃ©.
-     * @return FaktoriÃ¡l ÄÃ­sla.
+     * @throw IllegalArgumentException - pokud je zadané èíslo záporné.
+     * @return Faktoriál èísla.
      */
     public static double faktorial(double cislo){
         if(cislo < 0){
@@ -98,10 +98,10 @@ public class MathLib {
     }
     
     /**
-     * @brief Metoda vypoÄÃ­tÃ¡ zÃ¡klad umocnÄ›nÃ½ na hodnotu exponentu.
-     * @param zaklad ÄŒÃ­slo kterÃ© chceme umocÅˆovat
-     * @param exponent Exponent kterÃ½m budeme umocÅˆovat
-     * @return VracÃ­ vÃ½sledek mocnÄ›nÃ­
+     * @brief Metoda vypoèítá základ umocnìnı na hodnotu exponentu.
+     * @param zaklad Èíslo které chceme umocòovat
+     * @param exponent Exponent kterım budeme umocòovat
+     * @return Vrací vısledek mocnìní
      */
     public static double mocnina(double zaklad, double exponent){
         if(exponent <= 0){
@@ -115,12 +115,12 @@ public class MathLib {
     }
     
     /**
-     * @brief Metoda vypoÄÃ­tÃ¡ odmocninu zadanÃ©ho stupnÄ› ze zÃ¡kladu.
-     * @param zaklad ÄŒÃ­slo kterÃ© chceme odmocnit
+     * @brief Metoda vypoèítá odmocninu zadaného stupnì ze základu.
+     * @param zaklad Èíslo které chceme odmocnit
      * @param stupen Hodnota odmocniny
-     * @pre zaklad > 0 - vÃ½raz pod odmocninou nesmÃ­ bÃ½t zÃ¡pornÃ½
-     * @pre stupen != 0 odmocnina nesmÃ­ bÃ½t nultÃ©ho stupnÄ›
-     * @return VracÃ­ vÃ½sledek odmocnÄ›nÃ­
+     * @pre zaklad > 0 - vıraz pod odmocninou nesmí bıt zápornı
+     * @pre stupen != 0 odmocnina nesmí bıt nultého stupnì
+     * @return Vrací vısledek odmocnìní
      */
     public static double odmocnina(double zaklad, double stupen){
         if(zaklad < 0){
@@ -132,12 +132,12 @@ public class MathLib {
         return Math.pow(zaklad, 1.00 / stupen);
     }
     /**
-     * @brief Metoda vypoÄÃ­tÃ¡ modulo dvou ÄÃ­sel.
-     * @param delenec ÄŒÃ­slo kterÃ© chceme dÄ›lit
-     * @param delitel ÄŒÃ­slo kterÃ½m dÄ›lÃ­me
+     * @brief Metoda vypoèítá modulo dvou èísel.
+     * @param delenec Èíslo které chceme dìlit
+     * @param delitel Èíslo kterım dìlíme
      * @pre delitel != 0
-     * @throw ArithmeticExcpetion - pokud dÄ›litel = 0
-     * @return VracÃ­ zbytek po dÄ›lenÃ­
+     * @throw ArithmeticExcpetion - pokud dìlitel = 0
+     * @return Vrací zbytek po dìlení
      */
     public static double modulo(double delenec, double delitel){
         if(delitel == 0){

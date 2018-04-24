@@ -1,0 +1,8 @@
+#Ignore Math
+/Math/
+/README.md
+/build/
+/src/Calculator
+/src/Profiling
+*.docx
+*.tmp
